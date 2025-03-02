@@ -20,7 +20,7 @@
             <!-- nav部分 -->
             <div class="nav">
                 <ul>
-                    <li><a href="#" class="index_2"></a></li>
+                    <li><a href="#" class="index_2 active"></a></li>
                     <li><a href="#" class="introduction_2"></a></li>
                     <li><a href="#" class="game_2"></a></li>
                     <li><a href="#" class="join_2"></a></li>
@@ -31,84 +31,184 @@
         </div>
 
     </div>
-    <!-- 首页部分 -->
-    <section class="home">
-        <!-- 横幅部分 -->
-        <div class="banner">
-            <img src="images/3.31fdb14.png" alt="">
-            <!-- 左侧箭头 -->
-            <a href="#" class='prev'></a>
-            <!-- 右侧箭头 -->
-            <a href="#" class='next'></a>
-            <!-- 底部条形部分 -->
-            <div class="bar">
-                <span class="side1"></span>
-                <span class="side2"></span>
-                <span class="side3"></span>
+    <div class="tab-content">
+        <!-- 首页部分 -->
+        <section class="item active">
+            <div class="home">
+                <!-- 横幅部分 -->
+                <div class="banner">
+                    <img src="images/3.31fdb14.png" alt="">
+                    <!-- 左侧箭头 -->
+                    <a href="#" class='prev'></a>
+                    <!-- 右侧箭头 -->
+                    <a href="#" class='next'></a>
+                    <!-- 底部条形部分 -->
+                    <div class="bar">
+                        <!-- 默认第一个 -->
+                        <span class="active"></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+
+                </div>
+                <!-- 底部 -->
+                <div class="footer">
+                    <div class="w2">
+                        <!-- 左侧logo -->
+                        <div class="footer-logo">
+                            <img src="images/logo.9460104.png" alt="" class="footer-logo-img">
+                        </div>
+                        <!-- 右侧文本区域 -->
+                        <div class="footer-text">
+                            <div class="footer-text-top">
+                                <!-- 点击跳转实现 -->
+                                <a href="">公司简介</a>
+                                <a href="" class='line'>|</a>
+                                <a href="">联系我们</a>
+                                <a href="" class='line'>|</a>
+                                <a href="">加入我们</a>
+
+                            </div>
+                            <div class="footer-text-bottom">
+                                <div>本公司游戏适合12周岁以上玩家!</div>
+                                <div>
+                                    抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防上当受骗
+                                    适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生活
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li><a href="">用户协议</a></li>
+                                        <li><a href="">儿童隐私政策</a></li>
+                                        <li><a href="">隐私政策</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <a href="">粤ICP备18069368号 粤B2-20190166</a>
+                                </div>
+                                <div>
+                                    <img src="images/yue.915cae3.png" class='safe' alt="">
+                                    <a href="">粤公网安备 44010602012438号</a>
+                                </div>
+                                <div>Copyright © 广州库洛科技有限公司</div>
+                            </div>
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
             </div>
 
 
-        </div>
-        <!-- 底部 -->
-        <div class="footer">
-            <div class="w2">
-                <!-- 左侧logo -->
-                <div class="footer-logo">
-                    <img src="images/logo.9460104.png" alt="" class="footer-logo-img">
-                </div>
-                <!-- 右侧文本区域 -->
-                <div class="footer-text">
-                    <div class="footer-text-top">
-                        <!-- 点击跳转实现 -->
-                        <a href="">公司简介</a>
-                        <a href="" class='line'>|</a>
-                        <a href="">联系我们</a>
-                        <a href="" class='line'>|</a>
-                        <a href="">加入我们</a>
+        </section>
+        <!-- 公司简介部分 -->
+        <section class="item">公司介绍</section>
+        <!-- 产品信息部分 -->
+        <section class="item">产品</section>
+        <!-- 加入我们部分 -->
+        <section class=" item">加入</section>
+    </div>
 
-                    </div>
-                    <div class="footer-text-bottom">
-                        <div>本公司游戏适合12周岁以上玩家!</div>
-                        <div>
-                            抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防上当受骗
-                            适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生活
-                        </div>
-                        <div>
-                            <ul>
-                                <li><a href="">用户协议</a></li>
-                                <li><a href="">儿童隐私政策</a></li>
-                                <li><a href="">隐私政策</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <a href="">粤ICP备18069368号 粤B2-20190166</a>
-                        </div>
-                        <div>
-                            <img src="images/yue.915cae3.png" class='safe' alt="">
-                            <a href="">粤公网安备 44010602012438号</a>
-                        </div>
-                        <div>Copyright © 广州库洛科技有限公司</div>
-                    </div>
+    <script>
+        const slideData = [
+            {
+                url: 'images/1.209d7f7.png'
+            },
+            { url: 'images/2.002866c.png' },
+            { url: 'images/3.31fdb14.png' },
+        ]
 
-                </div>
+        // 获取元素
+        const slideImg = document.querySelector('.banner img')
 
-
-
-
-            </div>
-        </div>
-
-
-    </section>
-    <!-- 公司简介部分 -->
-    <section class="introduction"></section>
-    <!-- 产品信息部分 -->
-    <section class="game"></section>
-    <!-- 加入我们部分 -->
-    <section class=" join"></section>
+        // 右侧按钮切换实现
+        // 获取右侧按钮
+        const next = document.querySelector('.next')
+        let i = 0
+        // 注册点击事件
+        next.addEventListener('click', function () {
+            i++
+            i %= slideData.length
+            // 调用渲染函数
+            toggle()
+        })
+        // 左侧按钮切换实现
+        // 获取左侧按钮
+        const prev = document.querySelector('.prev')
+        prev.addEventListener('click', function () {
+            i--
+            if (i < 0) {
+                i = slideData.length - 1
+            }
+            // 调用渲染函数
+            toggle()
+        })
 
 
 
+        // 声明一个渲染函数作为复用
+        function toggle() {
+            // 渲染数据
+            slideImg.src = slideData[i].url
+            // 把之前的响应bar去掉
+            document.querySelector('.bar .active').classList.remove('active')
+            // 给当前bar添加响应
+            document.querySelector(`.bar span:nth-child(${i + 1})`).classList.add('active')
+        }
+
+        // 定时模块
+        // 开启定时器,应该从第一张开始
+        let timerId = setInterval(function () {
+            // 利用js自动调用点击事件！！
+            next.click()
+        }, 1000)
+
+        //鼠标经过停止定时器,！！事件源应该是一整个大盒子
+        const slide = document.querySelector('.banner')
+        slide.addEventListener('mouseenter', function () {
+            clearInterval(timerId)
+        })
+        //鼠标离开开启定时器,！！事件源应该是一整个大盒子
+
+        slide.addEventListener('mouseleave', function () {
+            //为什么还要关呢,为了把原来的计时清掉
+            clearInterval(timerId)
+            //开启定时器
+            timerId = setInterval(function () {
+                // 利用js自动调用点击事件！！
+                next.click()
+            }, 1000)
+        })
+
+        // 头部导航栏tab切换功能
+        // 1.给4个nav添加鼠标经过事件
+        //获取a链接
+        const as = document.querySelectorAll('.header .nav a')
+        // console.log(as)
+        for (let i = 0; i < as.length; i++) {
+            // 绑定事件
+            as[i].addEventListener('mouseenter', function () {
+                // 排他思想
+                document.querySelector('.nav .active').classList.remove('active')
+
+
+                // 给当前tab添加响应
+                this.classList.add('active')
+
+                //设置每个tab下的盒子一一对应
+                document.querySelector('.tab-content .active').classList.remove('active')
+                document.querySelector(`.tab-content .item:nth-child(${i + 1})`).classList.add('active')
+
+            })
+
+
+
+        }
+
+    </script>
 
 </body>
 

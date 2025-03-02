@@ -70,7 +70,7 @@ a {
 
 }
 
-.index_2:hover {
+.index_2.active {
     background-image: url(images/index_hover.7b5d8c6.png);
 
 }
@@ -80,20 +80,11 @@ a {
     background-image: url(images/introduction_2.b97084d.png);
 }
 
-.introduction_2:hover {
+.introduction_2.active {
     background-image: url(images/introduction_hover.c9a85dc.png);
 
 }
 
-.game_2:hover {
-    background-image: url(images/games_hover.557e48c.png);
-
-}
-
-.join_2:hover {
-    background-image: url(images/join_hover.a667aef.png);
-
-}
 
 .game_2 {
 
@@ -103,6 +94,24 @@ a {
 .join_2 {
 
     background-image: url(images/join_2.a51bcdc.png);
+}
+
+.game_2.active {
+    background-image: url(images/games_hover.557e48c.png);
+
+}
+
+.join_2.active {
+    background-image: url(images/join_hover.a667aef.png);
+
+}
+
+.tab-content .item {
+    display: none;
+}
+
+.tab-content .item.active {
+    display: block;
 }
 
 .button {
@@ -170,6 +179,11 @@ a {
     background-color: #17e317;
     margin: auto 4px;
 
+}
+
+.bar .active {
+    /* 当前的slide */
+    background-color: #fff;
 }
 
 
