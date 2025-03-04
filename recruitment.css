@@ -1,0 +1,174 @@
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    overflow: auto;
+    height: 100%;
+    background-color: skyblue;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#app {
+    overflow-wrap: break-word;
+}
+
+.suspension-box {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0 120px;
+    color: #DD4646;
+}
+
+.suspension-box .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    height: 68px;
+}
+
+.suspension-box .nav .logo img {
+    height: 48px;
+}
+
+.suspension-box .nav .tab-sign {
+    color: yellow;
+    margin-left: 80px;
+    flex-direction: row;
+    width: 0;
+    position: relative;
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.tab-sign .tab {
+    width: 100%;
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+}
+
+.tab-sign .sign {
+    width: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.sign .sign-box {
+    margin-left: 20px;
+}
+
+.tab-sign .sign button {
+
+    padding: 5px 22px;
+    border: 1px solid #fff;
+    /* border-color: inherit; */
+    /* color: inherit; */
+
+}
+
+.tab-sign .tab div {
+    position: relative;
+    display: flex;
+    margin-right: 60px;
+    cursor: pointer;
+    /* TODO */
+    transition: all 0.3s;
+
+}
+
+.tab-sign .tab div a {
+    outline: 0;
+}
+
+.banner img {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.hot-carrer {
+
+    /* padding: 40px 0; */
+    position: relative;
+}
+
+.hot-carrer p {
+    font-size: 40px;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.allcarrer {
+    padding: 20px 0;
+
+
+}
+
+.carrer-box {
+    /* 宽度和高度之后修改 */
+    width: 942px;
+    height: 364px;
+    display: flex;
+    margin: 0 auto;
+    /* justify-content: center; */
+
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+.carrer-box .box {
+    width: 394px;
+    height: 200px;
+    background-color: yellow;
+    margin-right: 24px;
+    margin-bottom: 24px;
+
+}
+
+.carrer-box .box:nth-child(3n) {
+    margin-right: 0;
+}
+
+.footer {
+    position: relative;
+}
+
+.back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+    background-color: #0056b3;
+}
+
+.arrow-up {
+    font-size: 24px;
+}

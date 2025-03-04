@@ -1,3 +1,22 @@
+@media screen and (max-width:800px) {
+
+    /* 屏幕最大宽度为800px */
+    /* !!如果在我们的屏幕上，最大宽度小于800px，则执行下面的样式 */
+    body {
+        background-color: yellow;
+    }
+}
+
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    overflow: auto;
+    height: 100%;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -119,17 +138,68 @@ a {
 }
 
 /* 首页横幅 */
-.home .banner {
+.banner {
     position: relative;
     width: 100%;
-    height: 572.4px;
+
 
 }
 
-.home .banner img {
+.banner img {
     width: 100%;
-    height: 572.4px;
+    vertical-align: bottom;
+
 }
+
+.icon {
+
+    position: absolute;
+    top: 13%;
+    left: 15%;
+}
+
+.icon img {
+    width: 114px;
+    height: 114px;
+}
+
+.game-introduction {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    color: #fff;
+    font-family: 宋体;
+}
+
+.game-introduction p {
+    line-height: 180%;
+}
+
+.game-name {
+    position: absolute;
+    top: 15%;
+    left: 72%;
+}
+
+.game-name h2 {
+    letter-spacing: 4px;
+    color: #e83836;
+    line-height: normal;
+    font-weight: 700;
+}
+
+.game-name h3 {
+    color: #e83836;
+}
+
+.link {
+    position: absolute;
+    top: 67%;
+    left: 70%;
+    color: #fff;
+}
+
+
 
 /* 设置左侧箭头 */
 .prev {
@@ -176,14 +246,16 @@ a {
     display: inline-block;
     width: 57px;
     height: 16px;
-    background-color: #17e317;
+    background-image: url(images/common-line.png);
     margin: auto 4px;
+    cursor: pointer;
+
+
 
 }
 
 .bar .active {
-    /* 当前的slide */
-    background-color: #fff;
+    background-image: url(images/red-line.png);
 }
 
 
@@ -266,4 +338,110 @@ a {
 .footer .w2 .footer-text .footer-text-bottom div .safe {
     height: 25px;
     vertical-align: middle;
+}
+
+.intro_img {
+    width: 100%;
+}
+
+.develop {
+    display: flex;
+    width: 100%;
+    height: 450px;
+    background-image: url(images/intro/bg_timeline.f9cc46e.png);
+    justify-content: center;
+    align-items: flex-start;
+    background-repeat: no-repeat;
+
+}
+
+.develop .timeline {
+    display: flex;
+    width: 930px;
+
+    background-color: yellow;
+    padding: 15px;
+    margin-top: 80px;
+    justify-content: flex-start;
+}
+
+.develop .timeline .timeline_img {
+    padding: 10px;
+
+}
+
+.timeline-progress {
+    display: flex;
+    margin-top: 40px;
+
+    justify-content: center;
+
+}
+
+/* 灰色托条 */
+.timeline-progress .dragger {
+    margin-bottom: 20px;
+    width: 400px;
+    height: 7px;
+    background-color: #b4b4b4;
+}
+
+/* 红色托条 */
+.timeline-progress .dragger .dragger-red {
+    height: 7px;
+    background-color: #f54343;
+}
+
+.timeline-text {
+    text-align: center;
+}
+
+.environment {
+    width: 100%;
+    height: 1034px;
+    text-align: center;
+    background-image: url(images/intro/bg_environment.6efedd6.png);
+}
+
+.environment-top img {
+    margin: 80px auto;
+}
+
+.environment-bottom .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 15px;
+}
+
+.environment-bottom .row div {
+    height: 300px;
+    overflow: hidden;
+}
+
+.environment-bottom .row div img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+}
+
+.relax {
+    position: relative;
+}
+
+.environment-bottom .row .row-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    height: 10%;
+    color: #fff;
+
+}
+
+
+.environment-bottom .row .row-text span {
+    background-color: #333;
+    padding: 0 10px;
 }
