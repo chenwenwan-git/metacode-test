@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>库洛游戏</title>
-    <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
 </head>
 
 <body>
@@ -20,10 +23,10 @@
             <!-- nav部分 -->
             <div class="nav">
                 <ul>
-                    <li><a href="#" class="index_2 active current-active"></a></li>
-                    <li><a href="#" class="introduction_2"></a></li>
-                    <li><a href="#" class="game_2"></a></li>
-                    <li><a href="#" class="join_2"></a></li>
+                    <li><a href="#" class="index_2 active" data-id='0'></a></li>
+                    <li><a href="#" class="introduction_2" data-id='1'></a></li>
+                    <li><a href="#" class="game_2" data-id='2'></a></li>
+                    <li><a href="recruitment.html" target="_blank" class="join_2" data-id='3'></a></li>
                 </ul>
 
             </div>
@@ -46,7 +49,7 @@
                     <!-- 底部条形部分 -->
                     <div class="bar">
                         <!-- 默认第一个 -->
-                        <span class="active"></span>
+                        <span class="active-bar"></span>
                         <span></span>
                         <span></span>
                     </div>
@@ -87,9 +90,14 @@
                     <img src="images/intro/title_environment.542f0b0.png" alt="">
 
                 </div>
-                <div class="environment-bottom">
+
+
+
+                <!-- 环境图片区域 -->
+
+                <div class="container">
                     <div class="row">
-                        <div class="relax">
+                        <div class='col-lg-9 col-md-9 col-sm-9 col-xs-9 col'>
                             <div class="relax-img">
                                 <img src="images/intro/1_1.ae69708.jpg" alt="">
                                 <!-- 图片更换 -->
@@ -98,13 +106,67 @@
                                 <img src="images/intro/1_1.ae69708.jpg" alt="">
                                 <img src="images/intro/1_1.ae69708.jpg" alt="">
                             </div>
-                            <div class="row-text">
+                            <div class="pic-text">
                                 <span>休闲区</span>
                             </div>
                         </div>
+                        <div class='col-lg-3 col-md-3 col-sm-3 col-xs-3 col'>
+                            <div class="img">
+                                <img src="images/intro/2_1.a3b3429.jpg" alt="">
+                                <img src="images/intro/2_1.a3b3429.jpg" alt="">
+                            </div>
+                            <div class="pic-text">
+                                <span>前台、会客厅</span>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="row"></div>
+                    <div class="row" style='margin-top:20px;'>
+                        <div class='col-lg-3 col-md-3 col-sm-3 col-xs-3 col'>
+                            <div class="img">
+                                <img src="images/intro/3_1.8095914.jpg" alt="">
+                                <img src="images/intro/3_2.99b669e.jpg" alt="">
+                                <img src="images/intro/3_3.0ce7d69.jpg" alt="">
+                                <img src="images/intro/3_4.d4550ce.jpg" alt="">
+                                <img src="images/intro/3_5.3549212.jpg" alt="">
+                                <img src="images/intro/3_6.5139928.jpg" alt="">
+                                <img src="images/intro/3_7.dbf9c00.jpg" alt="">
+                            </div>
+                            <div class="pic-text">
+                                <span>健身房</span>
+                            </div>
+                        </div>
+                        <div class='col-lg-5 col-md-5 col-sm-5 col-xs-5 col'>
+                            <div class="img">
+                                <img src="images/intro/3_1.8095914.jpg" alt="">
+                                <img src="images/intro/3_2.99b669e.jpg" alt="">
+                                <img src="images/intro/3_3.0ce7d69.jpg" alt="">
+                                <img src="images/intro/3_4.d4550ce.jpg" alt="">
+                                <img src="images/intro/3_5.3549212.jpg" alt="">
+                                <img src="images/intro/3_6.5139928.jpg" alt="">
+                                <img src="images/intro/3_7.dbf9c00.jpg" alt="">
+                            </div>
+                            <div class="pic-text">
+                                <span>下午茶</span>
+                            </div>
+                        </div>
+                        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-4 col'>
+                            <div class="img">
+                                <img src="images/intro/3_1.8095914.jpg" alt="">
+                                <img src="images/intro/3_2.99b669e.jpg" alt="">
+                                <img src="images/intro/3_3.0ce7d69.jpg" alt="">
+                                <img src="images/intro/3_4.d4550ce.jpg" alt="">
+                                <img src="images/intro/3_5.3549212.jpg" alt="">
+                                <img src="images/intro/3_6.5139928.jpg" alt="">
+                                <img src="images/intro/3_7.dbf9c00.jpg" alt="">
+                            </div>
+                            <div class="pic-text">
+                                <span>睡眠舱、培训室</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
 
             </div>
 
@@ -123,7 +185,7 @@
                     <!-- 底部条形部分 -->
                     <div class="bar">
                         <!-- 默认第一个 -->
-                        <span class="active"></span>
+                        <span class="active-bar"></span>
                         <span></span>
                         <span></span>
                     </div>
@@ -134,7 +196,7 @@
                     <div class="game-introduction">
                         <p>末世科幻题材，二次元3D动作手游<br>游戏中你将化身为指挥官，带领人类最后的希望---仿生人形<br>构造体，共同对抗被“帕弥什”侵蚀的机械大军。</p>
                         <h2><br>指挥官，你准备好了吗？</h2>
-                        <h3>——</h3>
+                        <h3>—</h3>
                     </div>
                     <div class="game-name">
                         <h2>GRAY<br>RAVEN</h2>
@@ -152,7 +214,7 @@
             </div>
         </section>
         <!-- 加入我们部分 -->
-        <section class=" item">加入</section>
+        <section class=" item"></section>
 
     </div>
     <!-- 底部 -->
@@ -197,13 +259,9 @@
                 </div>
 
             </div>
-
-
-
-
         </div>
     </div>
-    <script src='a.js'></script>
+    <script src='js/product.js'></script>
     <script>
         const slideData = [
             {
@@ -246,70 +304,62 @@
             // 渲染数据
             slideImg.src = slideData[i].url
             // 把之前的响应bar去掉
-            document.querySelector('.home .bar .active').classList.remove('active')
+
+            document.querySelector('.home .bar .active-bar').classList.remove('active-bar')
             // 给当前bar添加响应
-            document.querySelector(`.home .bar span:nth-child(${i + 1})`).classList.add('active')
+            document.querySelector(`.home .bar span:nth-child(${i + 1})`).classList.add('active-bar')
         }
 
         // 定时模块
         // 开启定时器,应该从第一张开始
-        let timerId = setInterval(function () {
-            // 利用js自动调用点击事件！！
-            next.click()
-        }, 1000)
-
-        //鼠标经过停止定时器,！！事件源应该是一整个大盒子
-        const slide = document.querySelector('.home .banner')
-        slide.addEventListener('mouseenter', function () {
-            clearInterval(timerId)
-        })
-        //鼠标离开开启定时器,！！事件源应该是一整个大盒子
-
-        slide.addEventListener('mouseleave', function () {
-            //为什么还要关呢,为了把原来的计时清掉
-            clearInterval(timerId)
-            //开启定时器
-            timerId = setInterval(function () {
+        document.addEventListener('DOMContentLoaded', function () {
+            let timerId = setInterval(function () {
                 // 利用js自动调用点击事件！！
                 next.click()
             }, 1000)
-        })
+            //鼠标经过停止定时器,！！事件源应该是一整个大盒子
+            const slide = document.querySelector('.home .banner')
+            slide.addEventListener('mouseenter', function () {
+                clearInterval(timerId)
+            })
+            //鼠标离开开启定时器,！！事件源应该是一整个大盒子
 
-        // 头部导航栏tab切换功能
-        // 1.给4个nav添加鼠标经过事件
-        //获取a链接
-        const as = document.querySelectorAll('.header .nav a')
-        // console.log(as)
-        for (let i = 0; i < as.length; i++) {
-            // 绑定事件
-            as[i].addEventListener('mouseenter', function () {
-                // // 排他思想
-                // document.querySelector('.nav .active').classList.remove('active')
-
-                // 给当前tab添加响应
-                this.classList.add('active')
-            });
-            // 鼠标离开事件
-            as[i].addEventListener('mouseleave', function () {
-                // 如果该 tab 不是当前激活的 tab，则移除 active 类
-                if (!this.classList.contains('current-active')) {
-                    this.classList.remove('active');
-                }
-            });
-            as[i].addEventListener('click', function () {
-                document.querySelector('.nav .active').classList.remove('active', 'current-active')
-                //设置每个tab下的盒子一一对应
-                document.querySelector('.tab-content .active').classList.remove('active')
-                // document.querySelector(`.nav a:nth-child(${i + 1})`).classList.add('active', 'current-active')
-                this.classList.add('active', 'current-active')
-                document.querySelector(`.tab-content .item:nth-child(${i + 1})`).classList.add('active')
+            slide.addEventListener('mouseleave', function () {
+                //为什么还要关呢,为了把原来的计时清掉
+                clearInterval(timerId)
+                //开启定时器
+                timerId = setInterval(function () {
+                    // 利用js自动调用点击事件！！
+                    next.click()
+                }, 1000)
+            })
 
 
-            });
-        }
+        });
 
     </script>
+    <script>
+        //采取事件委托实现tab切换
+        // 获取ul
+        const ul = document.querySelector('.header .nav ul')
+        //添加事件
+        ul.addEventListener('click', function (e) {
+            //对a标签进行操作
+            if (e.target.tagName === 'A') {
+                //排他思想
+                document.querySelector('.header .nav .active').classList.remove('active')
+                //this指向函数的调用者，所以这里不可以用this
+                e.target.classList.add('active')
+                const id = +e.target.dataset.id
+                //排他，实现tab内容切换
+                if (id < 3) {
+                    document.querySelector('.tab-content .active').classList.remove('active')
+                    document.querySelector(`.tab-content .item:nth-child(${id + 1})`).classList.add('active')
+                }
+            }
+        })
 
+    </script>
 </body>
 
 </html>

@@ -7,6 +7,7 @@
     }
 }
 
+
 html {
     overflow: hidden;
     height: 100%;
@@ -31,7 +32,7 @@ body {
 
 .header {
     height: 107px;
-    background-image: url(images/bg.5368794.png);
+    background-image: url(../images/bg.5368794.png);
 
     background-repeat: no-repeat;
 
@@ -43,7 +44,7 @@ li {
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 .logo {
@@ -62,7 +63,8 @@ a {
 }
 
 .nav {
-    float: left;
+    /* float: left; */
+    /* 为什么这个反倒不用float了 */
     margin-left: 72.33px;
 
 }
@@ -85,44 +87,61 @@ a {
 
 .index_2 {
 
-    background-image: url(images/index_2.c0bec23.png);
+    background-image: url(../images/index_2.c0bec23.png);
 
 }
 
 .index_2.active {
-    background-image: url(images/index_hover.7b5d8c6.png);
+    background-image: url(../images/index_hover.7b5d8c6.png);
 
+}
+
+.index_2:hover {
+    background-image: url(../images/index_hover.7b5d8c6.png);
 }
 
 .introduction_2 {
 
-    background-image: url(images/introduction_2.b97084d.png);
+    background-image: url(../images/introduction_2.b97084d.png);
 }
 
 .introduction_2.active {
-    background-image: url(images/introduction_hover.c9a85dc.png);
+    background-image: url(../images/introduction_hover.c9a85dc.png);
 
+}
+
+.introduction_2:hover {
+    background-image: url(../images/introduction_hover.c9a85dc.png);
 }
 
 
 .game_2 {
 
-    background-image: url(images/games_2.8980b3c.png);
+    background-image: url(../images/games_2.8980b3c.png);
+}
+
+
+.game_2.active {
+    background-image: url(../images/games_hover.557e48c.png);
+
+}
+
+.game_2:hover {
+    background-image: url(../images/games_hover.557e48c.png);
 }
 
 .join_2 {
 
-    background-image: url(images/join_2.a51bcdc.png);
-}
-
-.game_2.active {
-    background-image: url(images/games_hover.557e48c.png);
-
+    background-image: url(../images/join_2.a51bcdc.png);
 }
 
 .join_2.active {
-    background-image: url(images/join_hover.a667aef.png);
+    background-image: url(../images/join_hover.a667aef.png);
 
+}
+
+.join_2:hover {
+    background-image: url(../images/join_hover.a667aef.png);
 }
 
 .tab-content .item {
@@ -173,6 +192,12 @@ a {
 
 .game-introduction p {
     line-height: 180%;
+    font-size: 14px;
+}
+
+.game-introduction h2 {
+    font-size: 21px;
+    font-weight: 700;
 }
 
 .game-name {
@@ -181,7 +206,9 @@ a {
     left: 72%;
 }
 
+
 .game-name h2 {
+    font-size: 21px;
     letter-spacing: 4px;
     color: #e83836;
     line-height: normal;
@@ -214,7 +241,7 @@ a {
 
 
 
-    background-image: url(images/button-prev.png);
+    background-image: url(../images/button-prev.png);
 
 
 }
@@ -230,7 +257,7 @@ a {
     height: 84px;
     margin-top: -22px;
     text-decoration: none;
-    background-image: url(images/button-next.png);
+    background-image: url(../images/button-next.png);
 }
 
 .bar {
@@ -246,7 +273,7 @@ a {
     display: inline-block;
     width: 57px;
     height: 16px;
-    background-image: url(images/common-line.png);
+    background-image: url(../images/common-line.png);
     margin: auto 4px;
     cursor: pointer;
 
@@ -254,15 +281,15 @@ a {
 
 }
 
-.bar .active {
-    background-image: url(images/red-line.png);
+.bar .active-bar {
+    background-image: url(../images/red-line.png);
 }
 
 
 .footer {
     width: 100%;
     height: 250px;
-    background-image: url(images/bg.c6b6dc8.png);
+    background-image: url(../images/bg.c6b6dc8.png);
     background-color: #fff;
 
 }
@@ -325,6 +352,11 @@ a {
     height: 25px;
 }
 
+.footer-text-bottom ul {
+    padding: 0;
+    margin: 0;
+}
+
 .footer .w2 .footer-text .footer-text-bottom div ul li {
     float: left;
     margin-right: 4px;
@@ -347,8 +379,8 @@ a {
 .develop {
     display: flex;
     width: 100%;
-    height: 450px;
-    background-image: url(images/intro/bg_timeline.f9cc46e.png);
+    height: 435px;
+    background-image: url(../images/intro/bg_timeline.f9cc46e.png);
     justify-content: center;
     align-items: flex-start;
     background-repeat: no-repeat;
@@ -356,10 +388,10 @@ a {
 }
 
 .develop .timeline {
-    display: flex;
+    /* display: flex; */
     width: 930px;
 
-    background-color: yellow;
+    /* background-color: yellow; */
     padding: 15px;
     margin-top: 80px;
     justify-content: flex-start;
@@ -400,48 +432,74 @@ a {
     width: 100%;
     height: 1034px;
     text-align: center;
-    background-image: url(images/intro/bg_environment.6efedd6.png);
+
+    background-image: url(../images/intro/bg_environment.6efedd6.png);
 }
 
 .environment-top img {
+
+    -webkit-box-reflect: below 0 -webkit-linear-gradient(transparent, transparent 50%, rgba(255, 255, 255, .3));
+
     margin: 80px auto;
 }
 
-.environment-bottom .row {
+
+
+
+
+.container {
+    padding: 0 15px;
+    margin: auto;
+
+    width: 1000%;
+
+
+}
+
+.container .row {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 15px;
+    margin: 0 -15px;
+
 }
 
-.environment-bottom .row div {
-    height: 300px;
+.row div {
     overflow: hidden;
+    height: 300px;
 }
 
-.environment-bottom .row div img {
+.row div img {
     display: block;
     width: 100%;
     height: 100%;
-
+    cursor: pointer;
+    overflow: hidden;
+    object-fit: cover;
 }
 
-.relax {
-    position: relative;
-}
 
-.environment-bottom .row .row-text {
+.row .pic-text {
     position: absolute;
     bottom: 0;
     left: 0;
     z-index: 3;
     width: 100%;
     height: 10%;
-    color: #fff;
+    top: 90%;
+    color: #f8f9ff;
+    font-size: 18px;
+    transition: all .4s ease-in-out;
 
 }
 
 
-.environment-bottom .row .row-text span {
+.row .pic-text span {
     background-color: #333;
     padding: 0 10px;
+}
+
+.col {
+    position: relative;
+    width: 100%;
+    padding: 0 15px;
 }
