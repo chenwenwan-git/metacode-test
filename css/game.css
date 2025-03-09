@@ -387,8 +387,9 @@ a {
 .develop {
     display: flex;
     width: 100%;
-    height: 435px;
+    height: 450px;
     background-image: url(../images/intro/bg_timeline.f9cc46e.png);
+    background-size: 100% 100%;
     justify-content: center;
     align-items: flex-start;
     background-repeat: no-repeat;
@@ -396,23 +397,34 @@ a {
 }
 
 .develop .timeline {
-    /* display: flex; */
-    width: 930px;
+    display: flex;
+    width: 70%;
 
-    /* background-color: yellow; */
+
     padding: 15px;
     margin-top: 80px;
+    flex-direction: column;
     justify-content: flex-start;
 }
 
-.develop .timeline .timeline_img {
+.develop .timeline .timeline_img_box {
+    position: relative;
     padding: 10px;
+    overflow: hidden;
+    width: 100%;
+    height: 200px;
+
+}
+
+.develop .timeline .timeline_img_box .timeline_img {
+    position: absolute;
+    left: 0px;
 
 }
 
 .timeline-progress {
     display: flex;
-    margin-top: 40px;
+    margin-top: 50px;
 
     justify-content: center;
 
@@ -420,6 +432,7 @@ a {
 
 /* 灰色托条 */
 .timeline-progress .dragger {
+    position: relative;
     margin-bottom: 20px;
     width: 400px;
     height: 7px;
@@ -428,8 +441,12 @@ a {
 
 /* 红色托条 */
 .timeline-progress .dragger .dragger-red {
+    position: absolute;
+    left: 0;
+    width: 200px;
     height: 7px;
     background-color: #f54343;
+    overflow: hidden;
 }
 
 .timeline-text {

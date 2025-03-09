@@ -66,10 +66,11 @@
             <!-- banner部分
           -->
             <img src="images/intro/1.e8a3815.jpg" class='intro_img' alt="">
+            <!-- 公司发展时间轴部分 -->
             <div class="develop">
                 <div class="timeline">
-                    <div class="timeline_img">
-                        <img src="images/intro/timeline.b25c93d.png" alt="">
+                    <div class="timeline_img_box">
+                        <img class="timeline_img" src="images/intro/timeline.b25c93d.png" draggable="false" alt="">
                     </div>
                     <div class="timeline-progress">
                         <div class="dragger">
@@ -77,10 +78,11 @@
                         </div>
                     </div>
                     <div class="timeline-text">
-                        <span>——&nbsp;</span>
-                        <span>公司发展历程</span>
-                        <span>（拖动事件轴浏览）</span>
-                        <span>&nbsp;——</span>
+                        <span style="font-family: 宋体;">—&nbsp;</span>
+                        <span
+                            style="font-size: 14px;font-family: 微软雅黑;font-weight: bold;letter-spacing: 3px;">公司发展历程</span>
+                        <span style="font-size: 14px;font-family: 微软雅黑;letter-spacing:1px;">（拖动事件轴浏览）</span>
+                        <span style="font-family: 宋体;">&nbsp;—</span>
                     </div>
                 </div>
             </div>
@@ -390,6 +392,7 @@
         })
 
     </script>
+    <script src="js/timeline_drag.js"></script>
 </body>
 
 </html>
