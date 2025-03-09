@@ -47,7 +47,7 @@ a {
     padding: 0 120px;
     z-index: 1000;
     background-color: #DD4646;
-    transition: all 0.1s
+    transition: all 0.5s
 }
 
 
@@ -193,6 +193,7 @@ a {
     text-align: center;
     line-height: 35px;
     color: rgba(255, 255, 255, .7);
+    opacity: 0.5;
 }
 
 /* 设置右侧箭头 */
@@ -211,7 +212,16 @@ a {
     text-align: center;
     line-height: 35px;
     color: rgba(255, 255, 255, .7);
+    opacity: 0.5;
 }
+
+.prev:hover,
+.next:hover {
+
+    opacity: 0.9;
+    transition: 0.3s;
+}
+
 
 .banner .bar {
     position: absolute;

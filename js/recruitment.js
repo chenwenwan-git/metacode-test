@@ -1,6 +1,5 @@
 // 设置箭头效果
-// 当箭头两秒没被点击时，显示隐藏
-// 当箭头focus时，透明度变高，加上transition
+// 当箭头hover时，透明度变高，加上transition
 // 设置定时器，同首页的效果
 
 const slideData = [
