@@ -31,7 +31,11 @@ body {
 }
 
 .header {
-    height: 107px;
+    /* 固定头部导航栏 */
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+
     background-image: url(../images/bg.5368794.png);
 
     background-repeat: no-repeat;
@@ -142,6 +146,10 @@ a {
 
 .join_2:hover {
     background-image: url(../images/join_hover.a667aef.png);
+}
+
+.tab-content {
+    margin-top: 107px;
 }
 
 .tab-content .item {

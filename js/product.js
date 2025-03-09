@@ -60,6 +60,37 @@ function toggle2() {
     // 给当前bar添加响应
     document.querySelector(`.product .bar span:nth-child(${j + 1})`).classList.add('active-bar')
 }
+
+// bar的点击事件
+//采取事件委托实现切换
+// 获取元素
+const bar = document.querySelector('.product .bar')
+//添加事件
+
+bar.addEventListener('click', function (e) {
+    //对span标签进行操作
+    if (e.target.tagName === 'SPAN') {
+        //排他思想
+        document.querySelector('.product .bar .active-bar').classList.remove('active-bar')
+        //this指向函数的调用者，所以这里不可以用this
+        e.target.classList.add('active-bar')
+        const id = +e.target.dataset.id
+        // console.log(e.target.dataset)
+        // console.log(id)
+        //排他，实现内容切换
+        slideImg2.src = slideData2[id].url
+        iconImg.src = slideData2[id].icon
+        pText.innerHTML = slideData2[id].p
+        hText.innerHTML = slideData2[id].h2
+        gamenameText.innerHTML = slideData2[id].gamename
+        line.innerHTML = slideData2[id].line
+
+
+
+    }
+})
+
+
 document.addEventListener('DOMContentLoaded', function () {
     // 定时模块
     // 开启定时器,应该从第一张开始
