@@ -28,7 +28,7 @@ document.addEventListener('mousemove', (e) => {
         let maxLeft = parentWidth - imgWidth;
         // 设置拖拽边界
         drag_left = Math.min(minLeft, Math.max(drag_left, maxLeft));
-        console.log(drag_left)
+
         timelineImage.style.left = drag_left + 'px';
         // 设置滑块一起动
         // 让滑块跟着动，假设按相同比例移动
