@@ -342,13 +342,17 @@ a {
     font-size: 17px;
     color: #fff;
     /* padding: 0 20px; */
-    padding: 0 20px 0 0;
-
+    padding: 0 20px;
 }
 
-.footer .w2 .footer-text .footer-text-top a .line {
+.footer .w2 .footer-text .footer-text-top a:first-child {
+    padding-left: 0;
+}
+
+.footer .w2 .footer-text .footer-text-top .line {
     padding: 0 20px;
     color: #707070;
+    font-weight: 100;
 }
 
 .footer .w2 .footer-text .footer-text-bottom {
@@ -541,62 +545,3 @@ a {
     background-color: #333;
     padding: 0 10px;
 }
-
-/* 
-
-.container {
-    padding: 0 15px;
-    margin: auto;
-
-    width: 1000%;
-
-
-}
-
-.container .row {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -15px;
-
-}
-
-.row div {
-    overflow: hidden;
-    height: 300px;
-}
-
-.row div img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    overflow: hidden;
-    object-fit: cover;
-}
-
-
-.row .pic-text {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 3;
-    width: 100%;
-    height: 10%;
-    top: 90%;
-    color: #f8f9ff;
-    font-size: 18px;
-    transition: all .4s ease-in-out;
-
-}
-
-
-.row .pic-text span {
-    background-color: #333;
-    padding: 0 10px;
-}
-
-.col {
-    position: relative;
-    width: 100%;
-    padding: 0 15px;
-} */

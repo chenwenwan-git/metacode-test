@@ -198,11 +198,11 @@
             <div class="footer-text">
                 <div class="footer-text-top">
                     <!-- 点击跳转实现 -->
-                    <a href="">公司简介</a>
+                    <a href="" class='tab-to-introduction'>公司简介</a>
                     <a href="" class='line'>|</a>
-                    <a href="">联系我们</a>
+                    <a href="https://www.kurogames.com/contact" target="_blank">联系我们</a>
                     <a href="" class='line'>|</a>
-                    <a href="">加入我们</a>
+                    <a href="recruitment.html" target="_blank">加入我们</a>
 
                 </div>
                 <div class="footer-text-bottom">
@@ -213,13 +213,16 @@
                     </div>
                     <div>
                         <ul>
-                            <li><a href="">用户协议</a></li>
-                            <li><a href="">儿童隐私政策</a></li>
-                            <li><a href="">隐私政策</a></li>
+                            <li><a href="https://sdk.kurogames.com/p/agreement_public.html" target="_blank">用户协议</a>
+                            </li>
+                            <li><a href="https://sdk.kurogames.com/p/child_privacy.html" target="_blank">儿童隐私政策</a></li>
+                            <li><a href="https://sdk.kurogames.com/p/personal_privacy.html" target="_blank">隐私政策</a>
+                            </li>
                         </ul>
                     </div>
                     <div>
-                        <a href="">粤ICP备18069368号 粤B2-20190166</a>
+                        <a href="https://beian.miit.gov.cn/#/Integrated/notice_list" target="_blank">粤ICP备18069368号
+                            粤B2-20190166</a>
                     </div>
                     <div>
                         <img src="images/yue.915cae3.png" class='safe' alt="">
@@ -357,6 +360,14 @@
                     document.querySelector(`.tab-content .item:nth-child(${id + 1})`).classList.add('active')
                 }
             }
+        })
+        const footerTabToIntroduction = document.querySelector('.footer .tab-to-introduction')
+        footerTabToIntroduction.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector('.header .nav .active').classList.remove('active')
+            document.querySelector('.header .nav .introduction_2').classList.add('active')
+            document.querySelector('.tab-content .active').classList.remove('active')
+            document.querySelector(`.tab-content .item:nth-child(2)`).classList.add('active')
         })
 
     </script>
