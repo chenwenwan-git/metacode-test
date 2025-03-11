@@ -545,3 +545,19 @@ a {
     background-color: #333;
     padding: 0 10px;
 }
+
+.preview-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.preview-container img {
+    object-fit: contain;
+}
