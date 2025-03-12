@@ -97,13 +97,13 @@
 
                         <div class="row">
                             <div class="relax">
-                                <img src="images/intro/1_1.ae69708.jpg" draggable="false" alt="">
+                                <img data-id="1" src="images/intro/1_1.ae69708.jpg" draggable="false" alt="">
                                 <div class="pic-text">
                                     <span>休闲区</span>
                                 </div>
                             </div>
                             <div class="serve">
-                                <img src="images/intro/2_1.a3b3429.jpg" draggable="false" alt="">
+                                <img data-id="2" src="images/intro/2_1.a3b3429.jpg" draggable="false" alt="">
                                 <div class="pic-text">
                                     <span>前台、会客厅</span>
                                 </div>
@@ -112,19 +112,19 @@
                         </div>
                         <div class="row">
                             <div class="fitness">
-                                <img src="images/intro/3_1.8095914.jpg" draggable="false" alt="">
+                                <img data-id="3" src="images/intro/3_1.8095914.jpg" draggable="false" alt="">
                                 <div class="pic-text">
                                     <span>健身房</span>
                                 </div>
                             </div>
                             <div class="tea">
-                                <img src="images/intro/4_1.189ed56.jpg" draggable="false" alt="">
+                                <img data-id="4" src="images/intro/4_1.189ed56.jpg" draggable="false" alt="">
                                 <div class="pic-text">
                                     <span>下午茶</span>
                                 </div>
                             </div>
                             <div class="sleep">
-                                <img src="images/intro/5_1.e46c84b.jpg" draggable="false" alt="">
+                                <img data-id="5" src="images/intro/5_1.e46c84b.jpg" draggable="false" alt="">
                                 <div class="pic-text">
                                     <span>睡眠舱、培训室</span>
                                 </div>
@@ -236,12 +236,26 @@
         </div>
     </div>
     <div class="preview-container">
-        <img src="images/intro/1_1.ae69708.jpg" draggable="false" alt="">
+        <div class="preview-close-button">
+            <span>x</span>
+        </div>
+        <img class="big-img" src="images/intro/1_1.ae69708.jpg" draggable="false" alt="">
+        <div class="preview-tab-box">
+            <ul class="button-box">
+                <li class="preview-prev">&lt;</li>
+                <li class="preview-display">Y</li>
+                <li class="preview-next">&gt;</li>
+            </ul>
+        </div>1
+        <div class="preview-container-bottom">
+            <ul class="small-img-div">
+
+            </ul>
+        </div>
     </div>
 
 
-
-
+    <script src="js/image-preview.js"> </script>
     <script src='js/product.js'></script>
     <script>
         const slideData = [

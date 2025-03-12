@@ -11,7 +11,7 @@ const slideData2 = [
 ]
 
 // 获取元素
-const slideImg2 = document.querySelector('.product .banner img')
+const productSlideImg2 = document.querySelector('.product .banner img')
 const iconImg = document.querySelector('.product .icon img')
 const pText = document.querySelector('.product .banner p')
 const hText = document.querySelector('.product .banner h2')
@@ -47,7 +47,7 @@ prev2.addEventListener('click', function () {
 // 声明一个渲染函数作为复用
 function toggle2() {
     // 渲染数据
-    slideImg2.src = slideData2[j].url
+    productSlideImg2.src = slideData2[j].url
     iconImg.src = slideData2[j].icon
     pText.innerHTML = slideData2[j].p
     hText.innerHTML = slideData2[j].h2
@@ -78,7 +78,7 @@ bar.addEventListener('click', function (e) {
         // console.log(e.target.dataset)
         // console.log(id)
         //排他，实现内容切换
-        slideImg2.src = slideData2[id].url
+        productSlideImg2.src = slideData2[id].url
         iconImg.src = slideData2[id].icon
         pText.innerHTML = slideData2[id].p
         hText.innerHTML = slideData2[id].h2

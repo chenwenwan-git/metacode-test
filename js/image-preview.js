@@ -4,3 +4,102 @@
 //点击缩图实现容器的图片切换
 //用margin实现缩图条的运动
 //播放功能
+//图片数组
+slideImg1 = ['images/intro/1_1.ae69708.jpg', 'images/intro/1_2.7e475dc.jpg', 'images/intro/1_3.25e50cc.jpg', 'images/intro/1_4.d6ba91f.jpg', 'images/intro/1_5.d227626.jpg']
+slideImg2 = ['images/intro/2_1.a3b3429.jpg', 'images/intro/2_2.b0a8f0a.jpg']
+slideImg3 = ['images/intro/3_1.8095914.jpg', 'images/intro/3_2.99b669e.jpg', 'images/intro/3_3.0ce7d69.jpg', 'images/intro/3_4.d4550ce.jpg', 'images/intro/3_5.3549212.jpg', 'images/intro/3_6.5139928.jpg', 'images/intro/3_7.dbf9c00.jpg']
+slideImg4 = ['images/intro/4_1.189ed56.jpg', 'images/intro/4_2.5f59082.jpg', 'images/intro/4_4.80a7bb3.jpg', 'images/intro/4_5.36465a2.jpg', 'images/intro/4_6.79492c9.jpg', 'images/intro/4_7.8748bd9.jpg', 'images/intro/4_8.7e8ebfd.jpg', 'images/intro/4_9.70d2928.jpg', 'images/intro/4_10.ade335f.jpg', 'images/intro/4_11.8b9bc13.jpg']
+slideImg5 = ['images/intro/5_1.e46c84b.jpg', 'images/intro/5_2.e5cf117.jpg', 'images/intro/5_3.7ab6829.jpg', 'images/intro/5_4.cd489ce.jpg']
+const box = document.querySelector('.environment-img-container')
+const imageList = document.querySelector(".preview-container-bottom ul")
+const previewImg = document.querySelector('.preview-container .big-img')
+const previewContainer = document.querySelector('.preview-container')
+let targetImg;
+let previewid = 0
+
+box.addEventListener("click", function (e) {
+    e.preventDefault();
+    previewContainer.style.display = "flex"
+
+    if (e.target.tagName === 'IMG') {
+        previewid = 0;
+        console.log(e.target.dataset.id)
+        if (e.target.dataset.id == 1) {
+            targetImg = slideImg1;
+        } else if (e.target.dataset.id == 2) {
+            targetImg = slideImg2;
+        } else if (e.target.dataset.id == 3) {
+            targetImg = slideImg3;
+        } else if (e.target.dataset.id == 4) {
+            targetImg = slideImg4;
+        } else if (e.target.dataset.id == 5) {
+            targetImg = slideImg5;
+        }
+        console.log(slideImg2)
+        console.log(targetImg)
+        previewImg.src = targetImg[0]
+        clearListItems();
+        targetImg.forEach(imagePath => {
+
+            // 创建一个新的li元素
+            const listItem = document.createElement('li');
+
+            // 创建一个img元素
+            const imgElement = document.createElement('img');
+            imgElement.src = imagePath;
+            imgElement.alt = "图片";
+
+            // 将img元素添加到li元素中
+            listItem.appendChild(imgElement);
+
+            // 将li元素添加到ul元素中
+            imageList.appendChild(listItem);
+
+        });
+    }
+
+
+});
+
+// 清空ul中所有li的函数
+function clearListItems() {
+    while (imageList.firstChild) {
+        imageList.removeChild(imageList.firstChild);
+    }
+}
+
+
+//箭头切换事件
+const previewPrev = document.querySelector('.preview-prev')
+const previewNext = document.querySelector('.preview-next')
+
+
+
+//注册点击事件
+previewNext.addEventListener('click', function () {
+    previewid++
+    previewid %= targetImg.length
+    //后续把target清零,以及li清空
+    changeImg()
+})
+previewPrev.addEventListener('click', function () {
+    previewid--
+    if (previewid < 0) {
+        previewid = targetImg.length - 1
+    }
+
+    //后续把target清零,以及li清空
+    changeImg()
+})
+
+
+function changeImg() {
+    previewImg.src = targetImg[previewid]
+
+}
+
+//关闭按钮
+const previewClose = document.querySelector('.preview-close-button')
+previewClose.addEventListener("click", function () {
+    previewContainer.style.display = "none"
+})
