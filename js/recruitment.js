@@ -86,27 +86,10 @@ const hot = document.querySelector('.hot')
 const tab1 = document.querySelector('.tab-sign .tab .tab1')
 const tab2 = document.querySelector('.tab-sign .tab .tab2')
 
-recruimentNav.addEventListener('click', function (e) {
-    if (e.target.tagName = "A") {
-        const oldtab = document.querySelector('.tab-sign .tab .active')
-        if (oldtab)
-            oldtab.classList.remove('active')
-        e.target.classList.add('active')
-        //实现页面跳转
-        const tabid = +e.target.dataset.id
-        if (tabid == 0) {
-            console.log(0)
-            document.documentElement.scrollTop = 0;
-
-        } else {
-            document.documentElement.scrollTop = hot.offsetHeight;
-        }
-    }
-})
-
 //监听页面高度
-window.addEventListener('scroll', function () {
-    const h = this.document.documentElement.scrollTop
+window.addEventListener('scroll', function (e) {
+    e.preventDefault();
+    const oldtab = document.querySelector('.tab-sign .tab .active')
     //到达hot区域
     if (window.scrollY + window.innerHeight >= hot.offsetHeight - 100) {
         //热招职业tab高亮
@@ -117,4 +100,25 @@ window.addEventListener('scroll', function () {
         oldtab.classList.remove('active')
         tab1.classList.add('active')
     }
+
+    recruimentNav.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (e.target.tagName === "A") {
+            const oldtab = document.querySelector('.tab-sign .tab .active')
+            if (oldtab)
+                oldtab.classList.remove('active')
+            e.target.classList.add('active')
+
+            //实现页面跳转
+            const tabid = +e.target.dataset.id
+            if (tabid == 0) {
+
+                document.documentElement.scrollTop = 0;
+
+            } else if (tabid == 1) {
+                document.documentElement.scrollTop = hot.offsetHeight + 100;
+            }
+        }
+    })
+
 })

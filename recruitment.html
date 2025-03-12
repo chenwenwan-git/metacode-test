@@ -78,13 +78,13 @@
                 <div class="tab-sign">
                     <div class="tab">
                         <div>
-                            <a href="" title="首页">首页</a>
+                            <a href="" title="首页" class="nav-animation  tab1" data-id="0">首页</a>
                         </div>
                         <div>
-                            <a href="" title="热招职位">热招职位</a>
+                            <a href="" title="热招职位" class="nav-animation active tab2" data-id="1">热招职位</a>
                         </div>
                         <div>
-                            <a href="" title="校园招聘">校园招聘</a>
+                            <a href="" title="校园招聘" class='nav-animation'>校园招聘</a>
                         </div>
                     </div>
                     <div class="sign">
@@ -111,8 +111,8 @@
                 <!-- 底部条形部分 -->
                 <div class="bar">
                     <!-- 默认第一个 -->
-                    <span class="active-bar"></span>
-                    <span></span>
+                    <span class="active-bar bar-animation"></span>
+                    <span class="bar-animation"></span>
                 </div>
             </div>
         </div>
@@ -267,23 +267,7 @@
 
     </script>
     <script>
-            //导航栏跳转功能
-            //自适应函数
-            (function () {
-                const tab = document.querySelector('.suspension-box .nav .tab')
 
-                tab.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    if (e.target.tagName === 'A') {
-                        // 这个可以解决之前存在的那个问题
-                        const old = document.querySelector('.suspension-box .nav .tab .active')
-                        //判断,如果原来有,那么移除,没有则不
-                        if (old) old.classList.remove('active')
-                        // 给当前元素添加active
-                        e.target.classList.add('active')
-                    }
-                })
-            })();
         const hotCareer = document.querySelector('.hot-career')
         const header = document.querySelector('.suspension-box2')
         // console.log(hotCareer)

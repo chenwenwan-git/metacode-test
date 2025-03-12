@@ -85,19 +85,8 @@ a {
     color: white;
 }
 
-.tab-sign .tab:after {
-    position: absolute;
-    top: 120px;
-    left: 0;
-    overflow: hidden;
-    transition: 0.8s;
-    content: '';
-}
 
 
-.tab-sign .tab.active {
-    color: #141933
-}
 
 
 .tab-sign .sign {
@@ -229,7 +218,7 @@ a {
 
 .banner .bar {
     position: absolute;
-    bottom: 30px;
+    bottom: 80px;
     width: 100%;
     height: 10px;
     text-align: center;
@@ -237,15 +226,41 @@ a {
 
 .bar span {
     display: inline-block;
-    width: 37px;
-    height: 8px;
-    background-color: #0056b3;
+    width: 32px;
+    height: 4px;
+
     margin: auto 4px;
     cursor: pointer;
+    border-radius: 2px;
 }
 
-.bar .active-bar {
+/* .bar .active-bar {
     background-color: red;
+} */
+
+.bar-animation {
+    --width: 0;
+    position: relative;
+    background-color: #ccc;
+}
+
+.bar-animation::after {
+
+
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: var(--width);
+
+    height: 4px;
+    border-radius: 2px;
+    background-color: white;
+    transition: width 2s ease;
+}
+
+.bar-animation.active-bar::after {
+    width: 100%;
 }
 
 
