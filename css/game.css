@@ -668,3 +668,35 @@ a {
 
 
 }
+
+/* 图片的缩放动画 */
+.zoom-content {
+    animation-name: zoom;
+    animation-duration: 0.3s;
+}
+
+/* 缩放动画 */
+@keyframes zoom1 {
+    from {
+        transform: scale(0);
+        /* 初始缩放为0 */
+    }
+
+    to {
+        transform: scale(1);
+        /* 缩放到1倍 */
+    }
+}
+
+/* 缩放动画 */
+@keyframes zoom2 {
+    from {
+        transform: scale(1);
+        /* 缩放到1倍 */
+    }
+
+    to {
+        transform: scale(0);
+        /* 初始缩放为0 */
+    }
+}

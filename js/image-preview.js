@@ -2,7 +2,7 @@
 //点击图片时显示容器，同时按照实际更改图片
 //底部设置预览栏，显示图片缩图
 //点击缩图实现容器的图片切换
-//用margin实现缩图条的运动
+//用margin实现缩图条的运动?
 //播放功能
 //图片数组
 slideImg1 = ['images/intro/1_1.ae69708.jpg', 'images/intro/1_2.7e475dc.jpg', 'images/intro/1_3.25e50cc.jpg', 'images/intro/1_4.d6ba91f.jpg', 'images/intro/1_5.d227626.jpg']
@@ -13,15 +13,18 @@ slideImg5 = ['images/intro/5_1.e46c84b.jpg', 'images/intro/5_2.e5cf117.jpg', 'im
 const box = document.querySelector('.environment-img-container')
 const imageList = document.querySelector(".preview-container-bottom ul")
 const previewImg = document.querySelector('.preview-container .big-img')
+const zoom = document.querySelector('.preview-container .zoom-content')
 const previewContainer = document.querySelector('.preview-container')
 let targetImg;
 let previewid = 0
 
 box.addEventListener("click", function (e) {
     e.preventDefault();
+    zoom.style.animationName = 'zoom1'
     previewContainer.style.display = "flex"
 
     if (e.target.tagName === 'IMG') {
+        //重新赋值箭头部分的id
         previewid = 0;
         console.log(e.target.dataset.id)
         if (e.target.dataset.id == 1) {
@@ -35,10 +38,11 @@ box.addEventListener("click", function (e) {
         } else if (e.target.dataset.id == 5) {
             targetImg = slideImg5;
         }
-        console.log(slideImg2)
-        console.log(targetImg)
+        // 更改大的预览图
         previewImg.src = targetImg[0]
+        // 清空之前创建的小li元素
         clearListItems();
+        // 遍历targetImg数组,根据数量创建小li
         targetImg.forEach(imagePath => {
 
             // 创建一个新的li元素
@@ -70,36 +74,42 @@ function clearListItems() {
 
 
 //箭头切换事件
+// 获取箭头元素
 const previewPrev = document.querySelector('.preview-prev')
 const previewNext = document.querySelector('.preview-next')
 
 
-
-//注册点击事件
+//注册右侧按钮点击事件
 previewNext.addEventListener('click', function () {
     previewid++
     previewid %= targetImg.length
-    //后续把target清零,以及li清空
     changeImg()
 })
+//注册左侧按钮点击事件
 previewPrev.addEventListener('click', function () {
     previewid--
     if (previewid < 0) {
         previewid = targetImg.length - 1
     }
-
-    //后续把target清零,以及li清空
     changeImg()
 })
 
-
+//更改预览函数
 function changeImg() {
     previewImg.src = targetImg[previewid]
 
 }
 
-//关闭按钮
+//注册关闭按钮点击事件
+//获取元素
 const previewClose = document.querySelector('.preview-close-button')
 previewClose.addEventListener("click", function () {
-    previewContainer.style.display = "none"
+
+    zoom.style.animationName = 'zoom2'
+    // 设置计时器是为了让动画效果生效,与动画的时间一致
+    setTimeout(() => {
+        previewContainer.style.display = "none";
+    }, 300);
+
+
 })

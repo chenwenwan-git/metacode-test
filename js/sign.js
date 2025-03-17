@@ -105,18 +105,24 @@ inputsToCheck.forEach(input => {
 });
 
 function checkInputs() {
+
     const isPhoneValid = handleBlur(phoneInput, phoneRegex, phoneErrorBox, phoneErrorText, '请输入手机号', '请输入正确的手机号');
     const isEmailValid = handleBlur(emailInput, emailRegex, emailErrorBox, emailErrorText, '请输入邮箱', '请输入正确的邮箱');
     const isVertValid = handleBlur(vertInput, vertRegex, vertErrorBox, vertErrorText, '请输入验证码', '请输入六位验证码');
 
     let isValid = false;
+
     // !!需要区分是哪一种登陆方式
     // if ((isPhoneValid && isVertValid) || (isEmailValid && isVertValid)) 错误？
-    if (phoneLoginForm.style.display === 'block') {
+    if (phoneLoginForm.style.display !== 'none') {
+
         isValid = isPhoneValid && isVertValid;
-    } else if (emailLoginForm.style.display === 'block') {
+
+    } else if (emailLoginForm.style.display !== 'none') {
         isValid = isEmailValid && isVertValid;
+
     }
+
 
     if (isValid) {
         loginButton2.disabled = false;

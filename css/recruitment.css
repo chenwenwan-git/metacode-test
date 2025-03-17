@@ -1,12 +1,13 @@
 html {
     /* overflow: hidden; */
     height: 100%;
+    scroll-behavior: smooth;
 }
 
 body {
     overflow: auto;
     height: 100%;
-    background-color: skyblue;
+    /* background-color: skyblue; */
 }
 
 * {
@@ -21,6 +22,7 @@ a {
 
 #app {
     overflow-wrap: break-word;
+    /* display: none; */
 }
 
 .suspension-box {
@@ -28,14 +30,20 @@ a {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
 
 
     z-index: 1000;
 
-    padding: 0 120px;
+    /* padding: 0 120px; */
 
     /* background-color: #DD4646; */
+}
+
+.suspension-box1 {
+    /* height: 152px; */
+    background-color: transparent;
+    transition: all .7s ease;
 }
 
 .suspension-box2 {
@@ -44,19 +52,32 @@ a {
     top: -152px;
     left: 0;
     width: 100%;
+
     padding: 0 120px;
-    z-index: 1000;
+    z-index: 1000000;
     background-color: #DD4646;
-    transition: all 0.5s
+    transition: all .7s ease;
 }
 
+.suspension-w {
+    width: 85vw;
+    margin: auto;
+
+}
+
+.background-box {
+    width: 100vw;
+    background-color: transparent;
+}
 
 .suspension-box .nav {
     display: flex;
+    /* width: 90vw; */
     justify-content: space-between;
     align-items: center;
+    /* background-color: #DD4646; */
     padding: 10px 0;
-    height: 68px;
+    /* height: 68px; */
 }
 
 .suspension-box .nav .logo img {
@@ -93,6 +114,7 @@ a {
     width: 200px;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
 }
 
 .sign .sign-box {
@@ -125,14 +147,14 @@ a {
 }
 
 .search-box {
+    display: none;
     height: 48px;
-    /* width: 100%; */
-    box-sizing: inherit;
-    /* opacity: 0; */
-    overflow: hidden;
+    width: 85vw;
+    margin: auto;
+
     transition: all 0.2s;
     margin-bottom: 16px;
-    display: flex;
+    /* display: flex;/ */
 }
 
 .search-box input {

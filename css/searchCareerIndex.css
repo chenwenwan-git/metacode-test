@@ -1,0 +1,167 @@
+a {
+    text-decoration: none;
+}
+
+.search-career-index {
+    margin-top: 128px !important;
+    /* background-color: yellow; */
+    width: 75vw;
+    margin: 0 auto;
+    /* height: 100%; */
+    display: none;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* overflow: hidden; */
+}
+
+.on-recruit-career {
+    flex: 4;
+    box-shadow: rgba(74, 76, 93, 0.1) 6px 6px 24px;
+    height: 100%;
+    /* background-color: skyblue; */
+    padding: 25px;
+    width: 100%;
+}
+
+.on-recruit-career .top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.career-fliter {
+    margin-top: 50px;
+
+    width: 100%;
+}
+
+.fliter-top-info {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.fliter-search {
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    font-size: 15px;
+    /* padding: 0 5px; */
+}
+
+.fliter-search input {
+    flex: 13;
+    height: 40px;
+    border-radius: 8px 0 0 8px;
+    border: 1px solid rgb(133, 137, 166);
+    border-right: none;
+
+}
+
+.fliter-search button {
+    flex: 2;
+    border-radius: 0 8px 8px 0;
+    border: none;
+    background-color: rgb(12,
+            140,
+            246);
+    color: white;
+    font-size: 15px;
+}
+
+.fliter-select {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.fliter-select select {
+    color: rgb(133, 137, 166);
+    width: 300px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 8px;
+    border: 1px solid rgb(133, 137, 166);
+    outline: none;
+    font-size: 15px;
+    font-weight: 100;
+    padding: 5px;
+}
+
+.search-result-box {
+
+
+    margin-bottom: 24px;
+    margin-top: 50px;
+}
+
+.every-result {
+    width: 100%;
+    border-bottom: 1px solid #f7f8fa;
+
+}
+
+.every-result .info {
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.every-result .info .name {
+    color: #141933;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+
+}
+
+.every-result .info .time {
+    color: #989cb2;
+    text-align: right;
+}
+
+.every-result .info .time span {
+    font-size: 14px;
+    font-weight: 400;
+    margin-right: 16px;
+    color: #8589a6;
+}
+
+.page-box {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+}
+
+.change-box {
+    font-size: 18px;
+    display: flex;
+}
+
+.change-box select {
+    height: 30px;
+    width: 100px;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.go-page {
+    margin-left: 15px;
+}
+
+.go-page input {
+    width: 50px;
+    height: 24px;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid #ccc;
+}
+
+.lastest-career {
+    margin-left: 20px;
+    flex: 1;
+    height: 400px;
+    background-color: palegoldenrod;
+    box-shadow: rgba(74, 76, 93, 0.1) 6px 6px 24px;
+}

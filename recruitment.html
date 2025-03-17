@@ -7,9 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>recruitment</title>
     <link rel="stylesheet" href="css/recruitment.css">
-    <link rel="stylesheet" href="sign-Bootstrap.css">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="css/sign.css">
+    <link rel="stylesheet" href="css/searchCareerIndex.css">
+    <link rel="stylesheet" href="css/careerinfo.css">
 
     <style>
         /* 字体声明 */
@@ -34,142 +35,79 @@
     <div id="app" class='contentall'>
 
         <!-- 头部导航栏 eg:bilibili项目-->
-        <div class="suspension-box">
-
-            <div class="nav">
-                <!-- 正常时不设置颜色，也不显示搜索框，下去的时候才显示 -->
-                <div class="logo">
-                    <img src="images/logo.9460104.png" alt="">
-
-                </div>
-                <div class="tab-sign">
-                    <div class="tab">
-                        <div class="'test">
-                            <a href="" class="nav-animation acitve tab1" data-id="0">首页</a>
+        <div class="suspension-box1 suspension-box">
+            <div class="background-box">
+                <div class="suspension-w">
+                    <div class="nav">
+                        <!-- 正常时不设置颜色，也不显示搜索框，下去的时候才显示 -->
+                        <div class="logo">
+                            <img src="images/logo.9460104.png" alt="">
 
                         </div>
-                        <div>
-                            <a href="" class="nav-animation tab2" data-id="1">热招职位</a>
-                        </div>
-                        <div>
-                            <a href="" class="nav-animation">校园招聘</a>
-                        </div>
-                    </div>
-                    <div class="sign">
-                        <div class="sign-box">
-                            <button class="sign-btn">登录</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- 搜索框 -->
-            <!-- <div class="search-box">
-                <input type="text" placeholder="输入职位关键字">
-            </div> -->
-        </div>
-        <div class="suspension-box2 suspension-box">
+                        <div class="tab-sign">
+                            <div class="tab">
+                                <div class="'test">
+                                    <a href="" class="nav-animation active tab1" data-id="0">首页</a>
 
-            <div class="nav">
-                <!-- 正常时不设置颜色，也不显示搜索框，下去的时候才显示 -->
-                <div class="logo">
-                    <img src="images/logo.9460104.png" alt="">
-
-                </div>
-                <div class="tab-sign">
-                    <div class="tab">
-                        <div>
-                            <a href="" title="首页" class="nav-animation  tab1" data-id="0">首页</a>
-                        </div>
-                        <div>
-                            <a href="" title="热招职位" class="nav-animation active tab2" data-id="1">热招职位</a>
-                        </div>
-                        <div>
-                            <a href="" title="校园招聘" class='nav-animation'>校园招聘</a>
-                        </div>
-                    </div>
-                    <div class="sign">
-                        <div class="sign-box">
-                            <button class="sign-btn" href="recruitment.html" target="">登录</button>
+                                </div>
+                                <div>
+                                    <a href="" class="nav-animation tab2" data-id="1">热招职位</a>
+                                </div>
+                                <div>
+                                    <a href="" class="nav-animation">校园招聘</a>
+                                </div>
+                            </div>
+                            <div class="sign">
+                                <div class="sign-box">
+                                    <button class="sign-btn">登录</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- 搜索框 -->
-            <div class="search-box">
-                <input type="text" placeholder="输入职位关键字">
-            </div>
-        </div>
-
-        <!-- banner图 -->
-        <div class="banner">
-            <div class="banner-box">
-                <img src="images/1.png" alt="">
-                <!-- 左侧箭头 -->
-                <a href="" class='prev'>&lt;</a>
-                <!-- 右侧箭头 -->
-                <a href="" class='next'>&gt;</a>
-                <!-- 底部条形部分 -->
-                <div class="bar">
-                    <!-- 默认第一个 -->
-                    <span class="active-bar bar-animation"></span>
-                    <span class="bar-animation"></span>
+                <!-- 搜索框 -->
+                <div class="search-box">
+                    <input type="text" placeholder="输入职位关键字">
                 </div>
             </div>
         </div>
-        <div class="hot">
-            <!-- 热招职位 -->
-            <div class="hot-career">
-                <p>热招职位</p>
+
+        <div class="main-content-box">
+            <!-- banner图 -->
+            <div class="banner">
+                <div class="banner-box">
+                    <img src="images/1.png" alt="">
+                    <!-- 左侧箭头 -->
+                    <a href="" class='prev'>&lt;</a>
+                    <!-- 右侧箭头 -->
+                    <a href="" class='next'>&gt;</a>
+                    <!-- 底部条形部分 -->
+                    <div class="bar recruitment-bar">
+                        <!-- 默认第一个 -->
+                        <span class="active-bar bar-animation" data-id="0"></span>
+                        <span class="bar-animation" data-id="1"></span>
+                    </div>
+                </div>
             </div>
+            <div class="hot">
+                <!-- 热招职位 -->
+                <div class="hot-career">
+                    <p>热招职位</p>
+                </div>
 
-            <!-- 职业盒子 -->
+                <!-- 职业盒子 -->
 
-            <div class="all-careers">
-                <div class="career-boxs">
-                    <div class="row">
-                        <div>
+                <div class="all-careers">
+                    <div class="career-boxs">
 
-
-                            <span class='name'>美术类</span>
-
-
-                            <span class='number'>共76个职位</span>
-                            <span class='arrow' style="font-size: 16px;">&gt;</span>
-
-                        </div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="row">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="row">
-                        <div></div>
-                        <div></div>
-                        <div style="visibility: hidden;"></div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="footer-box">
-            <div class="footer-top">
-                <img src="images/yue.915cae3.png" alt="">
-                <div class="footer-top-text">
-                    <a href="https://beian.mps.gov.cn/#/query/webSearch">京公网安备 11010802024479号</a>
-                    <a href="https://beian.miit.gov.cn/">京ICP备15060035号-3</a>
-                </div>
 
-            </div>
-            <div class="footer-bottom">
-                <a href="https://www.mokahr.com/"></a>
-            </div>
-        </div>
-        <div id="backTop" class="back-to-top">
-            <i class="arrow-up"></i>
-        </div>
+
+
     </div>
     <!-- 登陆弹框部分 -->
 
@@ -235,7 +173,112 @@
     <div id='overlay'>
 
     </div>
+    <div class="search-career-index">
+        <div class="on-recruit-career">
+            <div class="top">
+                <span style="font-size: 20px;">在招职位</span>
+                <div style="text-align: center;">
+                    <span style="color:rgb(133, 137, 166)">分享</span>
+                    <span style="font-family: 'icomoon';color:rgb(133, 137, 166);"></span>
+                </div>
+            </div>
+            <div class="career-fliter">
+                <div class="fliter-top-info">
+                    <span style="font-size: 20px;">职位筛选</span>
+                    <div style="display: flex;justify-content: center;align-items: center;">
+                        <span class="fliter-condition-info" style="color:rgb(133, 137, 166)">已选 0 条件 | 0 结果 | 清除</span>
+                        <div style=" width: 13px;
+    height: 13px;
+    border-radius: 9px;
+    background-color: rgb(133, 137, 166);
+    font-size: 5px;
+    text-align: center;
+    line-height: 13px;
+    margin-left: 5px;
+    
+">
+                            <span style="font-family: 'icomoon';color:white;"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fliter-search">
+                    <input type="text">
+                    <button>搜索职位</button>
+                </div>
+                <div class="fliter-select">
+                    <select name="" id="">
 
+                        <option value="">职能类型</option>
+                        <option value="xx">xx</option>
+                    </select>
+                    <select name="" id="">
+                        <option value="">工作地点</option>
+                        <option value="xx">xx</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="search-result-box">
+
+
+            </div>
+            <div class="page-box">
+                <div class="change-box">
+                    <select name="" id="">
+                        <option value="">30行/页</option>
+                    </select>
+                    <div class="current-page">
+                        <span style="color: #ccc;">&lt;&nbsp;&nbsp; </span>
+                        <span> 1 </span>
+                        <span style="color: #ccc;">&nbsp;&nbsp;&gt; </span>
+                    </div>
+                    <div class="go-page">
+                        <span>前往</span>
+                        <input type="text">
+                        <span>页</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lastest-career"></div>
+    </div>
+
+    <!-- //职位详细界面 -->
+    <div class="everyCareerinfobox">
+        <div class="left">
+            <span>首页</span>
+            <span>/</span>
+            <span>职位列表</span>
+            <span>/</span>
+            <span>职位详情</span>
+            <!-- 换成a标签，然后职位列表可以用navigator后退 -->
+        </div>
+        <div class="middle">
+
+        </div>
+
+
+
+
+
+
+    </div>
+    <div class="footer-box">
+        <div class="footer-top">
+            <img src="images/yue.915cae3.png" alt="">
+            <div class="footer-top-text">
+                <a href="https://beian.mps.gov.cn/#/query/webSearch">京公网安备 11010802024479号</a>
+                <a href="https://beian.miit.gov.cn/">京ICP备15060035号-3</a>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <a href="https://www.mokahr.com/"></a>
+        </div>
+    </div>
+    <div id="backTop" class="back-to-top">
+        <i class="arrow-up"></i>
+    </div>
 
     <script src='js/recruitment.js'></script>
 
@@ -245,6 +288,7 @@
 
         const content = document.querySelector('.contentall');
         const backTop = document.querySelector('.back-to-top')
+
 
         // 判断是否到达底部
         window.addEventListener("scroll", function () {
@@ -261,6 +305,7 @@
         backTop.addEventListener('click', function () {
             // 回滚顶部
             // 能不能缓慢滚动回去
+            console.log('nihao')
             document.documentElement.scrollTop = 0
         })
 
@@ -269,15 +314,20 @@
     <script>
 
         const hotCareer = document.querySelector('.hot-career')
-        const header = document.querySelector('.suspension-box2')
+        const header = document.querySelector('.suspension-box1')
+        const MainContent = document.querySelector('.main-content-box')
+        const searchBox = document.querySelector('.search-box')
         // console.log(hotCareer)
         // console.log(header)
         window.addEventListener('scroll', function () {
             const n = document.documentElement.scrollTop
-            if (n >= hotCareer.getBoundingClientRect().top) {
-                header.style.top = 0
+            if (n >= hotCareer.getBoundingClientRect().top && MainContent.style.display !== 'none') {
+                header.style.backgroundColor = '#DD4646';
+                searchBox.style.display = 'flex'
+
             } else {
-                header.style.top = '-152px'
+                header.style.backgroundColor = 'transparent';
+                searchBox.style.display = 'none'
             }
         })
     </script>
@@ -309,6 +359,8 @@
         });
     </script>
     <script src="js/sign.js"></script>
+    <script src="https://fastly.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/renderData.js"></script>
 </body>
 
 </html>

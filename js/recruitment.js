@@ -87,38 +87,72 @@ const tab1 = document.querySelector('.tab-sign .tab .tab1')
 const tab2 = document.querySelector('.tab-sign .tab .tab2')
 
 //监听页面高度
-window.addEventListener('scroll', function (e) {
-    e.preventDefault();
+window.addEventListener('scroll', function () {
+
     const oldtab = document.querySelector('.tab-sign .tab .active')
     //到达hot区域
-    if (window.scrollY + window.innerHeight >= hot.offsetHeight - 100) {
-        //热招职业tab高亮
-        oldtab.classList.remove('active')
+
+
+    const n = document.documentElement.scrollTop
+    if (n >= hotCareer.getBoundingClientRect().top) {
+        if (oldtab)
+            oldtab.classList.remove('active')
         tab2.classList.add('active')
 
     } else {
-        oldtab.classList.remove('active')
+        if (oldtab)
+            oldtab.classList.remove('active')
         tab1.classList.add('active')
     }
 
-    recruimentNav.addEventListener('click', function (e) {
-        e.preventDefault();
-        if (e.target.tagName === "A") {
-            const oldtab = document.querySelector('.tab-sign .tab .active')
-            if (oldtab)
-                oldtab.classList.remove('active')
-            e.target.classList.add('active')
+})
+const SearchCareerIndex = document.querySelector('.search-career-index')
+const navBc = document.querySelector('.background-box')
+const everyCareerbox = document.querySelector('.everyCareerinfobox')
+recruimentNav.addEventListener('click', function (e) {
+    e.preventDefault();
+    if (e.target.tagName === "A") {
+        //这部分由其他页面跳转回去的先搁置
+        // MainContent.style.display = 'flex'
 
-            //实现页面跳转
-            const tabid = +e.target.dataset.id
-            if (tabid == 0) {
+        // SearchCareerIndex.style.display = 'none'
+        // navBc.style.backgroundColor = 'transparent'
+        //实现页面跳转
+        const tabid = +e.target.dataset.id
+        if (tabid == 0) {
 
-                document.documentElement.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
 
-            } else if (tabid == 1) {
-                document.documentElement.scrollTop = hot.offsetHeight + 100;
-            }
+        } else if (tabid == 1) {
+            document.documentElement.scrollTop = hot.offsetHeight + 100;
         }
-    })
+        const oldtab = document.querySelector('.tab-sign .tab .active')
+        if (oldtab)
+            oldtab.classList.remove('active')
+        e.target.classList.add('active')
+    }
+})
 
+//底部bar点击事件
+// bar的点击事件
+//采取事件委托实现切换
+// 获取元素
+const RecruimentBar = document.querySelector('.recruitment-bar')
+//添加事件
+
+
+RecruimentBar.addEventListener('click', function (e) {
+    //对span标签进行操作
+    if (e.target.tagName === 'SPAN') {
+        //排他思想
+        document.querySelector('.recruitment-bar .active-bar').classList.remove('active-bar')
+
+        e.target.classList.add('active-bar')
+        const id = +e.target.dataset.id
+
+        //排他，实现内容切换
+        slideImg.src = slideData[id].url
+
+
+    }
 })
