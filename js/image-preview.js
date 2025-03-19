@@ -131,7 +131,7 @@ document.querySelector('.preview-display').addEventListener('click', function ()
     //获取全屏播放元素
     var fullscreenElement = document.getElementById("fullscreen");
     //获取提示框
-    const info = document.querySelector("#fullscreen div")
+    const info = document.querySelector("#fullscreen .info")
     fullscreenElement.style.display = 'block'
     info.style.display = 'block';
     //先更新第一张图片，避免出现上次播放的最后一张图片

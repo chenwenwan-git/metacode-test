@@ -20,3 +20,21 @@ a {
     cursor: pointer;
     /* color: white; */
 }
+
+/* 消除前置圆点 */
+li {
+    list-style: none;
+}
+
+/* 字体声明 */
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.eot?hn1nga');
+    src: url('fonts/icomoon.eot?hn1nga#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?hn1nga') format('truetype'),
+        url('fonts/icomoon.woff?hn1nga') format('woff'),
+        url('fonts/icomoon.svg?hn1nga#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}

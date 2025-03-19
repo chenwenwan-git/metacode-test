@@ -6,15 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>库洛游戏</title>
-    <link rel="stylesheet" href="css/game.css">
     <link rel="stylesheet" href="css/common.css">
-
-
+    <link rel="stylesheet" href="css/game.css">
 </head>
 
 <body>
-    <!--头部-->
-    <div class=" header">
+    <!--头部导航栏start-->
+    <div class="header">
         <div class="w">
             <!-- 库洛游戏logo部分 -->
             <div class="logo">
@@ -29,15 +27,14 @@
                     <li><a href="#" class="game_2" data-id='2'></a></li>
                     <li><a href="recruitment.html" target="_blank" class="join_2" data-id='3'></a></li>
                 </ul>
-
             </div>
-
         </div>
-
     </div>
+    <!-- 头部导航栏end -->
 
+    <!-- 内容区域start -->
     <div class="tab-content">
-        <!-- 首页部分 -->
+        <!-- 首页部分start -->
         <section class="item active">
             <div class="home">
                 <!-- 横幅部分 -->
@@ -54,14 +51,11 @@
                         <span data-id="1"></span>
                         <span data-id="2"></span>
                     </div>
-
-
                 </div>
-
             </div>
-
-
         </section>
+        <!-- 首页部分end -->
+
         <!-- 公司简介部分 -->
         <section class="item">
             <!-- banner部分
@@ -134,12 +128,6 @@
 
                     </div>
                 </div>
-
-
-
-
-
-
             </div>
 
 
@@ -189,6 +177,7 @@
         <section class=" item"></section>
 
     </div>
+    <!-- 内容区域end -->
     <!-- 底部 -->
     <div class="footer">
         <div class="w2">
@@ -244,7 +233,9 @@
         <div class="preview-tab-box">
             <ul class="button-box">
                 <li class="preview-prev">&lt;</li>
-                <li class="preview-display">Y</li>
+                <li class="preview-display">
+                    <div class="btn"></div>
+                </li>
                 <li class="preview-next">&gt;</li>
             </ul>
         </div>1
@@ -255,9 +246,21 @@
         </div>
     </div>
     <div id="fullscreen">
-        <div>点击ESC退出播放</div>
+
+        <div class="info">
+            <div style="width: 494px; height: 44px;background-color: rgb(35,35,35);border-radius: 8px; margin: 3px;">
+                <span style="font-weight: bold;">kurogames.com </span>
+                <span> - 要退出全屏，请按</span>
+                <div style="display: inline-block;width: 30px;margin-top: 6px;
+                height: 30px;border: 2px solid hsla(0, 0%, 100%, 0.863);line-height: 25px;border-radius: 8px;">
+                    <span style="font-weight: bold;font-size: 18px;">Esc</span>
+                </div>
+            </div>
+        </div>
         <!-- <img class="active" src="images/1.209d7f7.png" data-id="1" alt=""> -->
     </div>
+
+
 
     <script src="js/image-preview.js"> </script>
     <script src='js/product.js'></script>

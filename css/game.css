@@ -7,6 +7,10 @@
     }
 }
 
+html {
+    overflow: hidden;
+}
+
 #fullscreen {
     z-index: 10000000000000000;
     position: fixed;
@@ -22,17 +26,23 @@
     transition: background-image 1s ease;
 }
 
-#fullscreen div {
-    /* width: 150px; */
-    height: 30px;
+#fullscreen .info {
+    width: 500px;
+    height: 50px;
     position: fixed;
-    top: 10%;
+    top: 5%;
     left: 50%;
-    margin-left: -75px;
-    background-color: rgba(94, 76, 76, 0.3);
+    margin-left: -250px;
+    background-color: transparent;
+    border-radius: 8px;
+    border: 2px solid #000;
+
+    font-size: 20px;
+    text-align: center;
     color: white;
-    font-size: 30px;
 }
+
+
 
 
 .header {
@@ -42,9 +52,7 @@
     width: 100vw;
     height: 107px;
     background-image: url(../images/bg.5368794.png);
-
     background-repeat: no-repeat;
-
 }
 
 .w {
@@ -57,22 +65,10 @@
     flex-wrap: nowrap;
 }
 
-/* 消除前置圆点 */
-li {
-    list-style: none;
-}
-
-a {
-    text-decoration: none !important;
-}
-
-.logo {
+.header .w .logo {
     float: left;
     width: 210px;
     height: 99px;
-    /* background-color: dodgerblue; */
-
-
 }
 
 .logo_img {
@@ -81,11 +77,8 @@ a {
     margin-top: 19px;
 }
 
-.nav {
-    /* float: left; */
-    /* 为什么这个反倒不用float了 */
+.header .w .nav {
     margin-left: 72px;
-
 }
 
 .nav ul li {
@@ -100,14 +93,8 @@ a {
 
 }
 
-
-
-
-
 .index_2 {
-
     background-image: url(../images/index_2.c0bec23.png);
-
 }
 
 .index_2.active {
@@ -164,6 +151,7 @@ a {
 }
 
 .tab-content {
+    /* 避免被遮住 */
     margin-top: 107px;
 }
 
@@ -175,27 +163,18 @@ a {
     display: block;
 }
 
-.button {
-    cursor: pointer;
-}
 
-/* 首页横幅 */
 .banner {
     position: relative;
     width: 100%;
-
-
 }
 
 .banner img {
-
     width: 100%;
     vertical-align: bottom;
-
 }
 
 .icon {
-
     position: absolute;
     top: 13%;
     left: 15%;
@@ -419,8 +398,6 @@ a {
 .develop .timeline {
     display: flex;
     width: 70%;
-
-
     padding: 15px;
     margin-top: 80px;
     flex-direction: column;
@@ -509,6 +486,7 @@ a {
 
 }
 
+
 .environment-bottom .row img {
     height: 300px;
     width: 100%;
@@ -518,6 +496,7 @@ a {
 .relax {
     position: relative;
     flex: 3.5;
+    margin-right: 30px;
 
 }
 
@@ -529,12 +508,13 @@ a {
 .fitness {
     position: relative;
     flex: 1;
+    margin-right: 30px;
 }
 
 .tea {
     position: relative;
     flex: 1.7;
-
+    margin-right: 30px;
 }
 
 .sleep {
@@ -611,11 +591,9 @@ a {
     width: 100%;
     position: fixed;
     bottom: 55px;
-    /* background-color: pink; */
 }
 
 .preview-tab-box .button-box {
-    /* background-color: skyblue; */
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -641,6 +619,30 @@ a {
 
 }
 
+
+.preview-display {
+    border: 0.2px solid rgb(255, 255, 255, .3);
+
+}
+
+.preview-display .btn {
+    margin-top: 5px;
+    margin-left: 12px;
+
+
+    width: 0;
+    height: 0;
+    border: 8px solid;
+
+    border-color: rgba(0, 0, 0, 0);
+
+    /* 四边颜色 */
+    border-left-color: white;
+
+
+
+
+}
 
 .preview-container-bottom {
     height: 50px;
