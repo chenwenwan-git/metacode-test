@@ -1,13 +1,17 @@
+//axios 公共配置
+axios.defaults.baseURL = 'http://121.199.48.79:89'
+
+
 // 热招职位部分
 function getCarrerList() {
     //获取数据
     axios({
-        url: 'http://121.199.48.79:89/jobs/cateList',
+        url: '/jobs/cateList',
         method: 'GET',
 
     }).then(result => {
         const CarrerList = result.data.data
-        console.log(result.data.data)
+
         //渲染数据
         const CarrerListstr = CarrerList.map(item => {
             return `  <div data-id="${item.categoryId}">
@@ -25,6 +29,7 @@ function getCarrerList() {
             // 如果不足三个，补充空的 div
             for (let j = group.length; j < 3; j++) {
                 groupStr += '<div style="visibility: hidden;"></div>';
+                //将多出的盒子隐藏
             }
             CarrerListstr2.push(groupStr);
         }
@@ -36,12 +41,12 @@ function getCarrerList() {
 
         document.querySelector('.career-boxs').innerHTML = finalstr
 
-        console.log(finalstr)
+
     })
     //
 }
 getCarrerList()
-console.log(1)
+
 
 //搜索框搜索职位部分的数据渲染
 //搜索框跳转,键盘输入
@@ -78,7 +83,10 @@ careerboxs.addEventListener("click", function (e) {
                 return ` <div class="every-result">
                     <a href="">
                         <div class="info">
-                            <div class="name" data-id="${item.id}">${item.name}</div>
+                        <div style="display: flex;justify-content: flex-start;align-items: center;">
+                                 <span
+                            style="margin-right: 4px;height: 20px;width:20px;text-align:center;font-size: 12px;color:rgb(251,100,100);background-color: rgb(255,227,227);line-height: 20px;border-radius:5px;">急</span>
+                            <div class="name" data-id="${item.id}">${item.name}</div></div>
                             <div class="time">
                                 <span>发布于 2024-11-15</span>
                             </div>
@@ -88,7 +96,7 @@ careerboxs.addEventListener("click", function (e) {
             }).join("")
             const fliterConditionInfo = document.querySelector('.fliter-condition-info')
             fliterConditionInfo.innerHTML = `已选 0 条件 | ${allresult.length} 结果 | 清除`
-            console.log(newallData)
+
             searchResultBox.innerHTML = newallData
 
         })
@@ -101,22 +109,19 @@ searchResultBox.addEventListener('click', function (e) {
     e.preventDefault()
     if (e.target.tagName === 'DIV' && e.target.classList.contains('name')) {
         MainContent.style.display = 'none'
-        // app.style.display = 'none'
+
         SearchCareerIndex.style.display = 'none'
         everyCareerbox.style.display = 'flex'
         navBc.style.backgroundColor = '#DD4646'
         document.scrollingElement.scrollTop = 0
         //渲染数据
-        console.log('点到了')
-        console.log(e.target.dataset.id)
+
         axios({
             url: `http://121.199.48.79:89/jobs/jobInfo/${e.target.dataset.id}`,
             method: 'POST',
 
 
         }).then(result => {
-            console.log('success')
-            console.log(result.data.data)
             const inforesult = result.data.data
 
             middleBox.innerHTML = `             <div class="info-box">
@@ -133,8 +138,8 @@ searchResultBox.addEventListener('click', function (e) {
                     </div>
                     <div class="pos-time-apply">
                         <div class="pos-time">
-                            <span class="pos" style="margin-bottom: 10px;">广东广州市</span>
-                            <span class="time">发布于2025-03-05</span>
+                            <span class="pos" style="margin-bottom: 10px;color:#989CB2;">广东广州市</span>
+                            <span class="time" style="color:#989CB2;">发布于2025-03-05</span>
                         </div>
                         <button class="apply">申请职位</button>
                     </div>
@@ -173,3 +178,40 @@ searchResultBox.addEventListener('click', function (e) {
     //实现跳转
 }
 )
+
+//登陆按钮的点击事件
+loginButton2.addEventListener('click', function () {
+    const phoneNumberValue = document.querySelector('.phone-login-form input').value
+    const vertNumberValue = document.querySelector('.vert input').value
+    if (document.querySelector('.agreement input').checked) {
+        console.log('可以提交请求了')
+        axios({
+            url: '/users/login',
+            method: 'post',
+            data: {
+                "userId": 0,
+                "userName": "chen",
+                "passWord": vertNumberValue,
+                "phoneNumber": phoneNumberValue,
+                "email": "none"
+
+
+            }
+        }).then(result => {
+            console.log(result)
+            console.log(result.data.data.token)
+            // 如果成功了的话，就让person显示
+            loginINg = 1
+            signBtn.style.display = 'none'
+            personinfo.style.display = 'block'
+        }).catch(error => {
+            console.dir(error)
+        })
+
+
+    }
+    else {
+        // 后面修改这里的样式
+        alert('请先勾选隐私协议')
+    }
+})

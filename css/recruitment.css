@@ -122,13 +122,19 @@ a {
 }
 
 .tab-sign .sign button {
-
+    display: block;
     padding: 5px 22px;
     border: 1px solid #fff;
     color: white;
     background-color: transparent;
+}
 
-
+.person-info {
+    display: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    background-color: yellow;
 
 }
 
@@ -167,6 +173,7 @@ a {
     background-color: #fff;
     background-clip: padding-box;
     color: #141933;
+    outline: none;
     border: 2px solid rgba(0, 0, 0, 0.1)
 }
 

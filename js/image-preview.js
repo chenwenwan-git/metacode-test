@@ -113,3 +113,48 @@ previewClose.addEventListener("click", function () {
 
 
 })
+
+document.querySelector('.preview-display').addEventListener('click', function () {
+    //实现图片播放功能
+    // targetImg为当前数组
+
+    let i = 0;
+    let timer1;
+    let timer2;
+    //清空定时器
+    if (timer1) {
+        clearInterval(timer1);
+    }
+    if (timer2) {
+        clearTimeout(timer2);
+    }
+    //获取全屏播放元素
+    var fullscreenElement = document.getElementById("fullscreen");
+    //获取提示框
+    const info = document.querySelector("#fullscreen div")
+    fullscreenElement.style.display = 'block'
+    info.style.display = 'block';
+    //先更新第一张图片，避免出现上次播放的最后一张图片
+    fullscreenElement.style.backgroundImage = `url(${targetImg[0]})`;
+    timer1 = setInterval(function () {
+        fullscreenElement.style.backgroundImage = `url(${targetImg[i]})`;
+        i++;
+        i %= targetImg.length
+    }, 1000)
+
+    //设置提示信息两秒后消失
+    timer2 = setTimeout(() => {
+        info.style.display = 'none'
+    }, 2000);
+
+    //通过esc实现退出
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            fullscreenElement.style.display = 'none'
+            clearInterval(timer1)
+            clearTimeout(timer2)
+        }
+    });
+
+})
+

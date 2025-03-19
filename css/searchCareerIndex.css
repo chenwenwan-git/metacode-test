@@ -103,6 +103,7 @@ a {
 
 .every-result .info {
     padding: 24px;
+    padding-left: 0;
     display: flex;
     justify-content: space-between;
 

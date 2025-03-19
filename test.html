@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="fullscreen">
+        <!-- <img class="active" src="images/1.209d7f7.png" data-id="1" alt=""> -->
+    </div>
+    <!-- <img src="images/2.002866c.png" data-id="2" alt=""> -->
+    <style>
+        body {
+            background-color: black;
+        }
+
+        #fullscreen {
+            z-index: 10000000000000000;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            transition: background-image 1s ease;
+        }
+    </style>
+    <script>
+        const imgs = [
+            'images/1.209d7f7.png', 'images/2.002866c.png', 'images/intro/1_1.ae69708.jpg', 'images/intro/2_1.a3b3429.jpg'
+        ]
+        // let currentIndex = 0;
+        //有active的
+        // let img = document.querySelector('.active')
+
+
+        // function toggleFullscreen() {
+        //     img.src = imgs[currentIndex];
+        //     if (!document.fullscreenElement) {
+        //         // 进入全屏模式
+        //         if (img.requestFullscreen) {
+        //             img.requestFullscreen();
+        // } else if (img.mozRequestFullScreen) {
+        //     // 火狐浏览器
+        //     img.mozRequestFullScreen();
+        // } else if (img.webkitRequestFullscreen) {
+        //     // 谷歌浏览器等
+        //     img.webkitRequestFullscreen();
+        // } else if (img.msRequestFullscreen) {
+        //     // IE浏览器
+        //     img.msRequestFullscreen();
+
+        // 
+        let i = 0;
+        var fullscreenElement = document.getElementById("fullscreen");
+        setInterval(function () {
+
+            console.log(`${imgs[i]}`)
+
+            fullscreenElement.style.backgroundImage = `url(${imgs[i]})`;
+            i++;
+            i %= imgs.length
+            console.log(i)
+
+        }, 1000)
+    </script>
+</body>
+
+</html>

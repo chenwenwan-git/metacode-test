@@ -75,8 +75,7 @@ bar.addEventListener('click', function (e) {
         //this指向函数的调用者，所以这里不可以用this
         e.target.classList.add('active-bar')
         const id = +e.target.dataset.id
-        // console.log(e.target.dataset)
-        // console.log(id)
+
         //排他，实现内容切换
         productSlideImg2.src = slideData2[id].url
         iconImg.src = slideData2[id].icon

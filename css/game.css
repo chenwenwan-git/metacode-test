@@ -7,6 +7,32 @@
     }
 }
 
+#fullscreen {
+    z-index: 10000000000000000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: none;
+    background-color: black;
+    transition: background-image 1s ease;
+}
+
+#fullscreen div {
+    /* width: 150px; */
+    height: 30px;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    margin-left: -75px;
+    background-color: rgba(94, 76, 76, 0.3);
+    color: white;
+    font-size: 30px;
+}
 
 html {
     overflow: hidden;
@@ -24,23 +50,27 @@ body {
     padding: 0;
 }
 
-.w {
-
-    width: 1075px;
-
-    margin: auto;
-}
 
 .header {
     /* 固定头部导航栏 */
     position: fixed;
     z-index: 999;
-    width: 100%;
-
+    width: 100vw;
+    height: 107px;
     background-image: url(../images/bg.5368794.png);
 
     background-repeat: no-repeat;
 
+}
+
+.w {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 65vw;
+    height: 99px;
+    margin: auto;
+    flex-wrap: nowrap;
 }
 
 /* 消除前置圆点 */
@@ -54,7 +84,7 @@ a {
 
 .logo {
     float: left;
-    width: 210.67px;
+    width: 210px;
     height: 99px;
     /* background-color: dodgerblue; */
 
@@ -70,7 +100,7 @@ a {
 .nav {
     /* float: left; */
     /* 为什么这个反倒不用float了 */
-    margin-left: 72.33px;
+    margin-left: 72px;
 
 }
 
@@ -80,9 +110,9 @@ a {
 
 .nav ul li a {
     display: block;
-    height: 98px;
+    height: 97px;
     width: 198px;
-    line-height: 98px;
+    line-height: 97px;
 
 }
 
@@ -174,6 +204,7 @@ a {
 }
 
 .banner img {
+
     width: 100%;
     vertical-align: bottom;
 

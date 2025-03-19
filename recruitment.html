@@ -60,6 +60,7 @@
                             <div class="sign">
                                 <div class="sign-box">
                                     <button class="sign-btn">登录</button>
+                                    <div class="person-info"></div>
                                 </div>
                             </div>
                         </div>
@@ -246,11 +247,11 @@
     <!-- //职位详细界面 -->
     <div class="everyCareerinfobox">
         <div class="left">
-            <span>首页</span>
-            <span>/</span>
-            <span>职位列表</span>
-            <span>/</span>
-            <span>职位详情</span>
+            <a data-id="1" style="color:#989CB2;">首页</a>
+            <span style="color:#989CB2;">&nbsp;/&nbsp;</span>
+            <a data-id="2" style="color:#989CB2;">职位列表</a>
+            <span style="color:#989CB2;">&nbsp;/&nbsp;</span>
+            <a>职位详情</a>
             <!-- 换成a标签，然后职位列表可以用navigator后退 -->
         </div>
         <div class="middle">
@@ -305,7 +306,7 @@
         backTop.addEventListener('click', function () {
             // 回滚顶部
             // 能不能缓慢滚动回去
-            console.log('nihao')
+
             document.documentElement.scrollTop = 0
         })
 
@@ -317,8 +318,7 @@
         const header = document.querySelector('.suspension-box1')
         const MainContent = document.querySelector('.main-content-box')
         const searchBox = document.querySelector('.search-box')
-        // console.log(hotCareer)
-        // console.log(header)
+
         window.addEventListener('scroll', function () {
             const n = document.documentElement.scrollTop
             if (n >= hotCareer.getBoundingClientRect().top && MainContent.style.display !== 'none') {
@@ -337,9 +337,7 @@
         const overlay = document.getElementById('overlay');
         const closeButton = document.querySelector('.popup .popup-content .close');
         const popup = document.querySelector('.popup');
-        console.log(loginButton);
-        console.log(overlay);
-        console.log(closeButton);
+
         // 监听登录按钮的点击事件
         loginButton.addEventListener('click', function () {
             // 显示遮罩层
@@ -361,6 +359,88 @@
     <script src="js/sign.js"></script>
     <script src="https://fastly.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="js/renderData.js"></script>
+    <script>
+        //详细职位页面的left部分跳转
+
+        //获取元素
+        const careerListtab = document.querySelector('.everyCareerinfobox .left')
+        careerListtab.addEventListener('click', function (e) {
+            e.preventDefault()
+
+            if (e.target.tagName === 'A') {
+
+                if (e.target.dataset.id == 1) {
+                    //跳转首页
+                    //todo 这个不对劲
+                    getCarrerList()
+                    //为什么不起作用
+                    MainContent.style.display = 'flex'
+
+
+                    SearchCareerIndex.style.display = 'none'
+                    everyCareerbox.style.display = 'none'
+                    navBc.style.backgroundColor = 'transparent'
+
+                }
+                else if (e.target.dataset.id == 2) {
+                    //跳转职位列表
+                    MainContent.style.display = 'none'
+                    // app.style.display = 'none'
+                    SearchCareerIndex.style.display = 'flex'
+                    everyCareerbox.style.display = 'none'
+                }
+            }
+        })
+    </script>
+
+    <script>
+        //导航栏搜索框的搜索事件
+        const careerSearchBox = document.querySelector('.search-box input')
+        careerSearchBox.addEventListener('keyup', function (e) {
+            if (e.key === 'Enter') {
+                //获取所有的职位信息
+                axios({
+                    url: '/jobs/jobInfo/all',
+                    method: 'post'
+                }).then(result => {
+                    const allcareers = result.data.data
+                    //筛选数据
+                    const filteredData = allcareers.filter(job => job.jobName.includes(careerSearchBox.value));
+                    //渲染筛选后的数据
+                    console.log(filteredData)
+                    const newfliteredData = filteredData.map(item => {
+                        return ` <div class="every-result">
+                    <a href="">
+                        <div class="info">
+                            <div style="display: flex;justify-content: flex-start;align-items: center;">
+                                 <span
+                            style="margin-right: 4px;height: 20px;width:20px;text-align:center;font-size: 12px;color:rgb(251,100,100);background-color: rgb(255,227,227);line-height: 20px;border-radius:5px;">急</span>
+                            <div class="name" data-id="${item.jobId}">${item.jobName}</div></div>
+                            <div class="time">
+                                <span>发布于 2024-11-15</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>`
+                    }).join("")
+                    const fliterConditionInfo = document.querySelector('.fliter-condition-info')
+                    fliterConditionInfo.innerHTML = `已选 0 条件 | ${filteredData.length} 结果 | 清除`
+
+                    searchResultBox.innerHTML = newfliteredData
+                    MainContent.style.display = 'none'
+                    // app.style.display = 'none'
+                    SearchCareerIndex.style.display = 'flex'
+                    navBc.style.backgroundColor = '#DD4646'
+                    everyCareerbox.style.display = 'none'
+                    document.scrollingElement.scrollTop = 0
+
+                })
+
+                //渲染数据
+                // 页面跳转
+            }
+        })
+    </script>
 </body>
 
 </html>

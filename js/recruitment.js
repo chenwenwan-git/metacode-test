@@ -1,3 +1,10 @@
+let loginINg = 0;
+const signBtn = document.querySelector('.sign-btn')
+const personinfo = document.querySelector('.person-info')
+
+
+
+
 // 设置箭头效果
 // 当箭头hover时，透明度变高，加上transition
 // 设置定时器，同首页的效果

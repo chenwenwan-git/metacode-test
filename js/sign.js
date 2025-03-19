@@ -93,11 +93,7 @@ vertInput.addEventListener('focus', function () {
     handleFocus(vertInput, vertErrorBox);
 })
 
-//如果输入框内容没有完善的话，登陆按钮不可点
-// 监听手机号,邮箱和验证码输入框的input事件，控制登录按钮的可点击状态
-// loginButton2.addEventListener('click', function () {
-//     console.log(2222222222222)
-// })
+
 
 const inputsToCheck = [phoneInput, emailInput, vertInput];
 inputsToCheck.forEach(input => {
@@ -132,3 +128,4 @@ function checkInputs() {
         loginButton2.style.cursor = 'not-allowed';
     }
 }
+

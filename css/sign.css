@@ -36,6 +36,7 @@ a {
 
 }
 
+/* 顶部切换登陆方式模块 */
 .popup-content .top {
     padding: 10px;
     padding-right: 30px;
@@ -45,7 +46,7 @@ a {
     font-size: 30px;
     line-height: 10px;
     display: flex;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
     flex-shrink: 0;
     align-items: flex-start;
     justify-content: space-between;
@@ -56,9 +57,12 @@ a {
     padding: 20px
 }
 
+/* 关闭按钮 */
 .close {
     float: right;
     cursor: pointer;
+    vertical-align: middle;
+    margin-top: 7px;
 }
 
 
@@ -89,7 +93,7 @@ a {
 
 }
 
-
+/* 手机号输入模块 */
 .popup .popup-content .bottom .phone-login-form {
     display: flex;
     flex-direction: column;
@@ -97,10 +101,12 @@ a {
     margin-bottom: 15px;
 }
 
+/* 邮箱输入模块 */
 .email-login-form {
     margin-bottom: 15px;
 }
 
+/* 错误提示 */
 .error-box {
     visibility: hidden;
     margin-top: 15px;
@@ -141,7 +147,7 @@ a {
 .popup .popup-content .bottom .input-group {
 
     width: 100%;
-    height: 25px;
+    height: 45px;
     position: relative;
     /* margin-bottom: 40px; */
     display: inline-flex;
@@ -150,25 +156,11 @@ a {
     flex-wrap: nowrap;
 }
 
-/* 
-.input-group-box1 {
-    /* flex: 1; */
-/* width: 100px; */
-/* height: 25px; */
-/* text-align: center; */
-/* border: 1px solid #ccc; */
-/* border-right: none; */
-/* padding: 8px; */
-/* padding-left: 0;
-    border-radius: 9px;
-    position: relative; */
-
-/* } */
-
 .popup .popup-content .bottom .input-group .button1 {
 
-    height: 40px;
+    height: 100%;
     width: 130px;
+
     padding-left: 8px;
     margin-right: 8px;
     border-radius: 8px !important;
@@ -179,9 +171,9 @@ a {
 }
 
 .button2 {
-
+    cursor: pointer;
     width: 300px;
-    height: 40px;
+    height: 100%;
     border-radius: 8px !important;
     margin-left: 8px !important;
     border: 1px solid #0068FF;
@@ -197,8 +189,8 @@ a {
 
     width: 100%;
     border-radius: 9px !important;
-    height: 40px;
-    padding: 8px;
+    height: 38px;
+    padding: 3.5px;
     border: 1px solid #ccc;
 
 }
@@ -214,7 +206,7 @@ a {
     margin-bottom: 15px;
     background-color: #81ABFF;
     border-radius: 8px;
-    margin-top: 20px;
+    margin-top: 5px;
 
     color: white;
     border: none;
@@ -248,6 +240,8 @@ a {
     margin-right: 5px;
 }
 
+
+/* checkbox及文本 */
 .agreement {
     margin-bottom: 15px;
     color: #474766;

@@ -13,11 +13,16 @@ a {
 }
 
 .left {
+
     width: 80vw;
     display: flex;
     justify-content: flex-start;
-    font-size: 13spx;
+    font-size: 13px;
     line-height: 15px;
+}
+
+.left a {
+    cursor: pointer;
 }
 
 .middle {
