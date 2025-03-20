@@ -59,9 +59,11 @@ box.addEventListener("click", function (e) {
             // 将li元素添加到ul元素中
             imageList.appendChild(listItem);
 
+
         });
     }
-
+    document.querySelector('.small-img-div li:nth-child(1)').classList.add('active')
+    document.querySelector('.small-img-div').style.marginLeft = 0
 
 });
 
@@ -77,6 +79,7 @@ function clearListItems() {
 // 获取箭头元素
 const previewPrev = document.querySelector('.preview-prev')
 const previewNext = document.querySelector('.preview-next')
+
 
 
 //注册右侧按钮点击事件
@@ -97,6 +100,19 @@ previewPrev.addEventListener('click', function () {
 //更改预览函数
 function changeImg() {
     previewImg.src = targetImg[previewid]
+    // 选中所有 li 元素
+    const liList = document.querySelectorAll('.small-img-div li');
+    // 移除所有 li 元素上的 active 类
+    liList.forEach(li => {
+        li.classList.remove('active');
+    });
+    // 给指定的 li 元素添加 active 类
+    liList[previewid].classList.add('active');
+    // 计算具体的像素值
+    const marginLeftValue = -30 * (previewid + 1);
+    // 将计算结果转换为字符串并添加 'px' 单位
+    document.querySelector('.small-img-div').style.marginLeft = `${marginLeftValue}px`;
+    // document.querySelector('.small-img-div').style.marginLeft = `-30px * ${previewid + 1}`
 
 }
 
