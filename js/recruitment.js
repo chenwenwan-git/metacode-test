@@ -129,6 +129,7 @@ recruimentNav.addEventListener('click', function (e) {
         if (tabid == 0) {
 
             document.documentElement.scrollTop = 0;
+            location.href = 'recruitment.html'
 
         } else if (tabid == 1) {
             document.documentElement.scrollTop = hot.offsetHeight + 100;
@@ -162,4 +163,9 @@ RecruimentBar.addEventListener('click', function (e) {
 
 
     }
+})
+
+
+personinfo.addEventListener('click', function () {
+    location.href = '../personinfo.html'
 })

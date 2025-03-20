@@ -11,6 +11,20 @@
     <link rel="stylesheet" href="css/sign.css">
     <link rel="stylesheet" href="css/searchCareerIndex.css">
     <link rel="stylesheet" href="css/careerinfo.css">
+    <style>
+        /* 字体声明 */
+        @font-face {
+            font-family: 'icomoon';
+            src: url('fonts/icomoon.eot?hn1nga');
+            src: url('fonts/icomoon.eot?hn1nga#iefix') format('embedded-opentype'),
+                url('fonts/icomoon.ttf?hn1nga') format('truetype'),
+                url('fonts/icomoon.woff?hn1nga') format('woff'),
+                url('fonts/icomoon.svg?hn1nga#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+    </style>
 </head>
 
 <body>
@@ -42,7 +56,7 @@
                             <div class="sign">
                                 <div class="sign-box">
                                     <button class="sign-btn">登录</button>
-                                    <div class="person-info"></div>
+                                    <div class="person-info" style="cursor: pointer;"></div>
                                 </div>
                             </div>
                         </div>
@@ -93,69 +107,71 @@
 
     </div>
     <!-- 登陆弹框部分 -->
+    <div class="overlay">
+        <div id="login-popup" class="popup">
+            <div class="popup-content">
+                <div class="top">
+                    <ul class="login-tabs">
+                        <li class="active" id="phone-login-tab">手机号登录</li>
+                        <li id="email-login-tab">邮箱登录</li>
+                    </ul>
+                    <span class="close">&times;</span>
+                </div>
+                <div class="bottom">
+                    <div class="phone-login-form">
+                        <div class="input-group">
+                            <button class=button1>+86</button>
+                            <input type="text" placeholder="请输入手机号">
+                        </div>
+                        <div class="error-box">
+                            <div class="icon-box">
+                                <span class="icon"></span>
+                            </div>
+                            <span class="error-text">请输入正确的手机号</span>
+                        </div>
+                    </div>
 
-    <div id="login-popup" class="popup">
-        <div class="popup-content">
-            <div class="top">
-                <ul class="login-tabs">
-                    <li class="active" id="phone-login-tab">手机号登录</li>
-                    <li id="email-login-tab">邮箱登录</li>
-                </ul>
-                <span class="close">&times;</span>
-            </div>
-            <div class="bottom">
-                <div class="phone-login-form">
-                    <div class="input-group">
-                        <button class=button1>+86</button>
-                        <input type="text" placeholder="请输入手机号">
-                    </div>
-                    <div class="error-box">
-                        <div class="icon-box">
-                            <span class="icon"></span>
+                    <div class="email-login-form" style="display: none;">
+                        <div class="input-group">
+                            <input type="text" placeholder="请输入邮箱">
                         </div>
-                        <span class="error-text">请输入正确的手机号</span>
-                    </div>
-                </div>
-
-                <div class="email-login-form" style="display: none;">
-                    <div class="input-group">
-                        <input type="text" placeholder="请输入邮箱">
-                    </div>
-                    <div class="error-box">
-                        <div class="icon-box">
-                            <span class="icon"></span>
+                        <div class="error-box">
+                            <div class="icon-box">
+                                <span class="icon"></span>
+                            </div>
+                            <span class="error-text">请输入手机号</span>
                         </div>
-                        <span class="error-text">请输入手机号</span>
                     </div>
-                </div>
-                <div class="vert">
-                    <div class="input-group">
-                        <input type="text" placeholder="请输入验证码">
-                        <button class='button2'>获取验证码</button>
-                    </div>
-                    <div class="error-box">
-                        <div class="icon-box">
-                            <span class="icon"></span>
+                    <div class="vert">
+                        <div class="input-group">
+                            <input type="text" placeholder="请输入验证码">
+                            <button class='button2'>获取验证码</button>
                         </div>
-                        <span class="error-text">请输入手机号</span>
+                        <div class="error-box">
+                            <div class="icon-box">
+                                <span class="icon"></span>
+                            </div>
+                            <span class="error-text">请输入手机号</span>
+                        </div>
                     </div>
+                    <button class="login-button" disabled="false">登录</button>
+                    <div class="agreement">
+                        <input type="checkbox">首次登录会自动创建新账号，且阅读并同意<a href="#">《隐私协议》</a>
+                    </div>
+                    <div class="other-login">其他登录方式</div>
+                    <button class="wechat-login-button">
+                        <span></span>
+                        微信登录
+                    </button>
                 </div>
-                <button class="login-button" disabled="false">登录</button>
-                <div class="agreement">
-                    <input type="checkbox">首次登录会自动创建新账号，且阅读并同意<a href="#">《隐私协议》</a>
-                </div>
-                <div class="other-login">其他登录方式</div>
-                <button class="wechat-login-button">
-                    <span></span>
-                    微信登录
-                </button>
             </div>
         </div>
     </div>
 
-    <div id='overlay'>
 
-    </div>
+
+
+
     <div class="search-career-index">
         <div class="on-recruit-career">
             <div class="top">
@@ -264,7 +280,12 @@
     </div>
 
     <script src='js/recruitment.js'></script>
-
+    <script>
+        if (localStorage.getItem('token')) {
+            signBtn.style.display = 'none'
+            personinfo.style.display = 'block'
+        }
+    </script>
 
     <script>
         // 获取返回顶部按钮和页面内容元素
@@ -316,7 +337,8 @@
     <script>
         // 获取登录按钮、遮罩层和关闭按钮的元素
         const loginButton = document.querySelector('.sign .sign-box .sign-btn');
-        const overlay = document.getElementById('overlay');
+        // const overlay = document.getElementById('overlay');
+        const overlay = document.querySelector('.overlay')
         const closeButton = document.querySelector('.popup .popup-content .close');
         const popup = document.querySelector('.popup');
 
@@ -325,6 +347,7 @@
             // 显示遮罩层
 
             overlay.style.display = 'flex';
+
             popup.style.display = 'flex';
 
         });
@@ -334,8 +357,8 @@
             // 隐藏遮罩层
             overlay.style.display = 'none';
             popup.style.display = 'none';
-            overlay.style.display
-            popup.style.display
+            // overlay.style.display
+            // popup.style.display
         });
     </script>
     <script src="js/sign.js"></script>
@@ -353,21 +376,12 @@
 
                 if (e.target.dataset.id == 1) {
                     //跳转首页
-                    //todo 这个不对劲
-                    getCarrerList()
-                    //为什么不起作用
-                    MainContent.style.display = 'flex'
-
-
-                    SearchCareerIndex.style.display = 'none'
-                    everyCareerbox.style.display = 'none'
-                    navBc.style.backgroundColor = 'transparent'
-
+                    //重新加载页面
+                    location.href = 'recruitment.html'
                 }
                 else if (e.target.dataset.id == 2) {
                     //跳转职位列表
                     MainContent.style.display = 'none'
-                    // app.style.display = 'none'
                     SearchCareerIndex.style.display = 'flex'
                     everyCareerbox.style.display = 'none'
                 }

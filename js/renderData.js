@@ -183,10 +183,12 @@ searchResultBox.addEventListener('click', function (e) {
 loginButton2.addEventListener('click', function () {
     const phoneNumberValue = document.querySelector('.phone-login-form input').value
     const vertNumberValue = document.querySelector('.vert input').value
+
+    //本地存储登陆状态，下次加载可以登陆？
     if (document.querySelector('.agreement input').checked) {
         console.log('可以提交请求了')
         axios({
-            url: '/users/login',
+            url: '/users/register',
             method: 'post',
             data: {
                 "userId": 0,
@@ -199,11 +201,12 @@ loginButton2.addEventListener('click', function () {
             }
         }).then(result => {
             console.log(result)
-            console.log(result.data.data.token)
+
             // 如果成功了的话，就让person显示
             loginINg = 1
             signBtn.style.display = 'none'
             personinfo.style.display = 'block'
+            localStorage.setItem('token', result.data.data.token)
         }).catch(error => {
             console.dir(error)
         })
