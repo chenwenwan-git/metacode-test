@@ -141,7 +141,7 @@ searchResultBox.addEventListener('click', function (e) {
                             <span class="pos" style="margin-bottom: 10px;color:#989CB2;">广东广州市</span>
                             <span class="time" style="color:#989CB2;">发布于2025-03-05</span>
                         </div>
-                        <button class="apply">申请职位</button>
+                        <button class="apply" style="cursor:pointer">申请职位</button>
                     </div>
                 </div>
                 <div class="box-middle">
@@ -166,7 +166,7 @@ searchResultBox.addEventListener('click', function (e) {
                     </div>
                 </div>
                  <div class="footer-button">
-                <button class="apply">申请职位</button>
+                <button class="apply" style="cursor:pointer">申请职位</button>
             </div>
 
             </div>
@@ -176,45 +176,102 @@ searchResultBox.addEventListener('click', function (e) {
     }
     //要链接跳转还是切换就可以
     //实现跳转
+
+
 }
 )
+middleBox.addEventListener('click', function (e) {
+    if (e.target.classList.contains('apply')) {
+        if (localStorage.getItem('token')) {
+            alert("可以申请职位")
 
-//登陆按钮的点击事件
+        } else {
+            alert('请先登陆')
+            //弹出登陆框
+            overlay.style.display = 'flex';
+
+            popup.style.display = 'flex';
+        }
+    }
+})
+
 loginButton2.addEventListener('click', function () {
-    const phoneNumberValue = document.querySelector('.phone-login-form input').value
-    const vertNumberValue = document.querySelector('.vert input').value
-
-    //本地存储登陆状态，下次加载可以登陆？
     if (document.querySelector('.agreement input').checked) {
-        console.log('可以提交请求了')
         axios({
-            url: '/users/register',
+            url: 'http://121.199.48.79:89/users/register',
             method: 'post',
             data: {
-                "userId": 0,
-                "userName": "chen",
-                "passWord": vertNumberValue,
-                "phoneNumber": phoneNumberValue,
-                "email": "none"
 
+                // cww
+                // 111111
+                userName: usernameInput.value,
+                passWord: passwordFirstInput.value,
 
             }
         }).then(result => {
-            console.log(result)
 
-            // 如果成功了的话，就让person显示
-            loginINg = 1
-            signBtn.style.display = 'none'
-            personinfo.style.display = 'block'
-            localStorage.setItem('token', result.data.data.token)
-        }).catch(error => {
-            console.dir(error)
+            console.log(result.data.data)
+            axios({
+                url: 'http://121.199.48.79:89/users/login',
+                method: 'post',
+                data: {
+
+                    userName: usernameInput.value,
+                    passWord: passwordFirstInput.value,
+                }
+            }).then(result => {
+                //存储token，对应是result.data.data
+                localStorage.setItem('token', result.data.data)
+                signBtn.style.display = 'none'
+                personinfo.style.display = 'block'
+                //让登陆弹框消失
+                overlay.style.display = 'none';
+                popup.style.display = 'none';
+            })
         })
-
-
-    }
-    else {
+    } else {
         // 后面修改这里的样式
         alert('请先勾选隐私协议')
     }
 })
+
+
+// //登陆按钮的点击事件
+// loginButton2.addEventListener('click', function () {
+//     const phoneNumberValue = document.querySelector('.phone-login-form input').value
+//     const vertNumberValue = document.querySelector('.vert input').value
+
+//     //本地存储登陆状态，下次加载可以登陆？
+//     if (document.querySelector('.agreement input').checked) {
+//         console.log('可以提交请求了')
+//         axios({
+//             url: '/users/register',
+//             method: 'post',
+//             data: {
+//                 "userId": 0,
+//                 "userName": "chen",
+//                 "passWord": vertNumberValue,
+//                 "phoneNumber": phoneNumberValue,
+//                 "email": "none"
+
+
+//             }
+//         }).then(result => {
+//             console.log(result)
+
+//             // 如果成功了的话，就让person显示
+//             loginINg = 1
+//             signBtn.style.display = 'none'
+//             personinfo.style.display = 'block'
+//             localStorage.setItem('token', result.data.data.token)
+//         }).catch(error => {
+//             console.dir(error)
+//         })
+
+
+//     }
+//     else {
+//         // 后面修改这里的样式
+//         alert('请先勾选隐私协议')
+//     }
+// })

@@ -41,8 +41,6 @@
     text-align: left;
     margin: 0 auto;
     font-weight: bold;
-
-
 }
 
 .tab .avatar {
@@ -50,32 +48,39 @@
     width: 140px;
 
     position: relative;
-    top: -100px;
+    top: -122px;
     left: -180px;
     border-radius: 70px;
-    background-color: skyblue;
+    background-color: rgb(0,
+            102,
+            255);
 }
 
 .tab .hello {
     position: relative;
-    top: -220px;
+    top: -240px;
     color: white;
     font-size: 30px;
 }
 
-.tab-w span {
-
+.tab-w .tabnav {
+    line-height: 52px;
     margin-right: 20px;
     font-size: 20px;
+}
 
-
+.tab-w .tabnav.active {
+    border-bottom: 3px solid rgb(0,
+            102,
+            255);
 }
 
 .bodyinfo {
     height: 100%;
     width: 100vw;
-    padding: 58px 0 58px;
-    /* background-color: pink; */
+
+    margin-top: 58px;
+
 }
 
 .bodymiddle {
@@ -86,8 +91,7 @@
     box-shadow: rgba(74, 76, 93, 0.2) 0px 6px 24px;
     display: flex;
     justify-content: space-between;
-
-
+    align-items: center;
 }
 
 .bodymiddle-left {
@@ -99,7 +103,7 @@
     margin-bottom: 15px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: flex-start;
 }
 
@@ -115,10 +119,9 @@
 .infobox {
     display: flex;
     flex-direction: column;
-
     align-items: flex-start;
     width: 100%;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 .row {
@@ -130,11 +133,11 @@
     margin-top: 20px;
 }
 
-.infobox .row div {
+.infobox .row .everybox {
     height: 40px;
     flex: 1;
-    margin-right: 15px;
-    /* background-color: green; */
+    margin-right: 30px;
+
 }
 
 .infobox .row input,
@@ -146,6 +149,7 @@
     border-radius: 5px;
     outline: none;
     border: 1px solid rgb(217, 215, 215);
+    box-sizing: border-box;
 }
 
 
@@ -155,7 +159,9 @@
     border-radius: 10px;
     margin: auto;
     margin-top: 40px;
-    background-color: skyblue;
+    background-color: rgb(0,
+            102,
+            255);
     vertical-align: middle;
     text-align: center;
     font-size: 15px;
@@ -166,8 +172,26 @@
 
 
 .bodymiddle-right {
-    background-color: skyblue;
+    background-color: rgb(0,
+            102,
+            255);
     flex: 1;
     height: 100%;
     height: 50px;
+}
+
+.personalinfobtn {
+    border: 2px solid white;
+    position: relative;
+    top: -280px;
+    right: -690px;
+    color: black;
+    font-size: 20px;
+    width: 100px;
+    height: 30px;
+    font-weight: normal;
+    background-color: transparent;
+    line-height: 30px;
+    padding-left: 20px;
+
 }

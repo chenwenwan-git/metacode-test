@@ -11,7 +11,7 @@
 <body>
     <div class="topnav">
         <div class="w">
-            <div class="left" style="color:white;">返回</div>
+            <div class="left" style="color:white;cursor: pointer;">返回</div>
             <div class="right">
                 <div class="avatar"></div>
             </div>
@@ -21,13 +21,16 @@
     <div class="tab">
         <div class="tab-w">
 
-            <span>我的简历</span>
+            <span class="active tabnav">我的简历</span>
 
 
-            <span>投递记录</span>
+            <span class="tabnav">投递记录</span>
 
             <div class="avatar"></div>
             <div class="hello">您好，7426</div>
+            <div class="personalinfobtn">
+                <span>个人资料</span>
+            </div>
         </div>
     </div>
     <div class="bodyinfo">
@@ -39,21 +42,21 @@
                     </div>
                     <div class="infobox">
                         <div class="row">
-                            <div class="name">
+                            <div class="name everybox">
                                 <span style="display: block;">姓名</span>
                                 <input type="text" placeholder="姓名">
                             </div>
-                            <div class="phonenumber">
+                            <div class="phonenumber everybox">
                                 <span style="display: block;">手机号码</span>
                                 <input type="text">
                             </div>
                         </div>
                         <div class="row">
-                            <div class="email">
+                            <div class="email everybox">
                                 <span style="display: block;">邮箱</span>
                                 <input type="text" placeholder="邮箱">
                             </div>
-                            <div style="visibility: hidden;" class="email">
+                            <div style="visibility: hidden;" class="email everybox">
                                 <span style="display: block;">邮箱</span>
                                 <input type="text" placeholder="邮箱">
                             </div>
@@ -66,13 +69,13 @@
                     <form action="">
                         <div class="infobox">
                             <div class="row">
-                                <div class="name">
+                                <div class="name everybox">
                                     <span style="display: block;">性别</span>
                                     <select name="" id="">
                                         <option value="">请选择</option>
                                     </select>
                                 </div>
-                                <div class="phonenumber">
+                                <div class="phonenumber everybox">
                                     <span style="display: block;">工作经验</span>
                                     <select name="" id="">
                                         <option value="">请选择</option>
@@ -80,23 +83,23 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="name">
+                                <div class="name everybox">
                                     <span style="display: block;">最高学历</span>
                                     <select name="" id="">
                                         <option value="">请选择</option>
                                     </select>
                                 </div>
-                                <div class="phonenumber">
+                                <div class="phonenumber everybox">
                                     <span style="display: block;">所在地</span>
                                     <input type="text" placeholder="所在地">
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="name">
+                                <div class="name everybox">
                                     <span style="display: block;">最近公司</span>
                                     <input type="text" placeholder="最近公司">
                                 </div>
-                                <div class="phonenumber">
+                                <div class="phonenumber everybox">
                                     <span style="display: block;">证件号码</span>
                                     <div style="margin-right: 0;display: flex;justify-content: space-between;">
                                         <select style="flex:1;margin-right:5px" name="" id="">
@@ -107,11 +110,11 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="name">
+                                <div class="name everybox">
                                     <span style="display: block;">出生日期（年龄）</span>
                                     <input type="text" placeholder="出生日期（年龄）">
                                 </div>
-                                <div style="visibility: hidden;" class="phonenumber">
+                                <div style="visibility: hidden;" class="phonenumber everybox">
                                     <span style="display: block;">手机号码</span>
                                     <select name="" id="">
                                         <option value="">请选择</option>
@@ -130,6 +133,13 @@
         </div>
     </div>
     </div>
+
+    <script>
+        document.querySelector(".topnav .w .left").addEventListener('click', function () {
+            location.href = 'recruitment.html'
+            // 不过这个在点击个人资料后会出问题，无法返回上一步
+        })
+    </script>
 </body>
 
 </html>

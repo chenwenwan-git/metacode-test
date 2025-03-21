@@ -1,126 +1,50 @@
-const loginPopup = document.getElementById('login-popup');
-const phoneLoginTab = document.getElementById('phone-login-tab');
-const emailLoginTab = document.getElementById('email-login-tab');
-const phoneLoginForm = document.querySelector('.phone-login-form');
-const emailLoginForm = document.querySelector('.email-login-form');
-let flagLogin = false;
-// closeButton.addEventListener('click', function () {
-//     loginPopup.style.display = 'none';
-// });
 
-phoneLoginTab.addEventListener('click', function () {
-    phoneLoginTab.classList.add('active');
-    emailLoginTab.classList.remove('active');
-    phoneLoginForm.style.display = 'block';
-    emailLoginForm.style.display = 'none';
-});
+const usernameInput = document.querySelector('.username .input-group input')
+const passwordFirstInput = document.querySelector('.password-first .input-group input')
+const passwordVertInput = document.querySelector('.password-vert .input-group input')
+const errorbox = document.querySelector('.error-box')
 
-emailLoginTab.addEventListener('click', function () {
-    phoneLoginTab.classList.remove('active');
-    emailLoginTab.classList.add('active');
-    phoneLoginForm.style.display = 'none';
-    emailLoginForm.style.display = 'block';
-});
-
-
-
-//正则表达式实现部分
-//  手机号输入框失去焦点时的校验
-const phoneInput = document.querySelector('.phone-login-form .input-group input')
-const emailInput = document.querySelector('.email-login-form .input-group input')
-const vertInput = document.querySelector('.vert .input-group input')
-const phoneErrorBox = document.querySelector('.phone-login-form .error-box')
-const emailErrorBox = document.querySelector('.email-login-form .error-box')
-const vertErrorBox = document.querySelector('.vert .error-box')
-const phoneRegex = /^1[3-9]\d{9}$/;
-const emailRegex = /^[^\s@]+@[a-zA-Z0-9.-]+\.com$/;
-const vertRegex = /^\d{6}$/;
-const phoneErrorText = document.querySelector('.phone-login-form .error-box .error-text')
-const emailErrorText = document.querySelector('.email-login-form .error-box .error-text')
-const vertErrorText = document.querySelector('.vert .error-box .error-text')
 const loginButton2 = document.querySelector('.popup-content .bottom .login-button')
 
 
 
-//封装函数
-function handleFocus(inputbox, errorbox) {
-    errorbox.style.visibility = 'hidden';
-    inputbox.style.outline = '1px solid #0068FF';
-}
-function handleBlur(inputbox, regex, errorbox, errorText, emptyErrorMsg, formatErroeMsg) {
-
-    if (!regex.test(inputbox.value)) {
-        errorbox.style.visibility = 'visible';
-        inputbox.style.outline = '1px solid #F03E3E';
-        if (!inputbox.value) {
-            errorText.innerHTML = emptyErrorMsg;
-        }
-        else {
-            errorText.innerHTML = formatErroeMsg;
-        }
-        return false;
-    } else {
-        errorbox.style.visibility = 'hidden';
-        inputbox.style.outline = 'none';
-        return true;
-    }
-}
-
-//手机号输入模块
-phoneInput.addEventListener('blur', function () {
-    handleBlur(phoneInput, phoneRegex, phoneErrorBox, phoneErrorText, '请输入手机号', '请输入正确的手机号');
-}
-)
-phoneInput.addEventListener('focus', function () {
-    handleFocus(phoneInput, phoneErrorBox);
-})
-
-//邮箱输入模块
-emailInput.addEventListener('blur', function () {
-    handleBlur(emailInput, emailRegex, emailErrorBox, emailErrorText, '请输入邮箱', '请输入正确的邮箱');
-}
-)
-emailInput.addEventListener('focus', function () {
-    handleFocus(emailInput, emailErrorBox);
-})
-
-//验证码输入模块
-vertInput.addEventListener('blur', function () {
-    handleBlur(vertInput, vertRegex, vertErrorBox, vertErrorText, '请输入验证码', '请输入六位验证码');
-}
-)
-vertInput.addEventListener('focus', function () {
-    handleFocus(vertInput, vertErrorBox);
-})
 
 
-
-const inputsToCheck = [phoneInput, emailInput, vertInput];
+const inputsToCheck = [usernameInput, passwordFirstInput, passwordVertInput];
 inputsToCheck.forEach(input => {
     input.addEventListener('input', checkInputs);
 });
 
+//实时监测第二次密码的输入是否与第一次输入的代码相同
 function checkInputs() {
+    passwordVertInput.addEventListener('input', function () {
+        if (passwordVertInput.value == passwordFirstInput.value && passwordFirstInput.value) {
 
-    const isPhoneValid = handleBlur(phoneInput, phoneRegex, phoneErrorBox, phoneErrorText, '请输入手机号', '请输入正确的手机号');
-    const isEmailValid = handleBlur(emailInput, emailRegex, emailErrorBox, emailErrorText, '请输入邮箱', '请输入正确的邮箱');
-    const isVertValid = handleBlur(vertInput, vertRegex, vertErrorBox, vertErrorText, '请输入验证码', '请输入六位验证码');
 
-    let isValid = false;
+            errorbox.style.visibility = 'hidden';
 
-    // !!需要区分是哪一种登陆方式
-    // if ((isPhoneValid && isVertValid) || (isEmailValid && isVertValid)) 错误？
-    if (phoneLoginForm.style.display !== 'none') {
+        } else {
+            errorbox.style.visibility = 'visible';
 
-        isValid = isPhoneValid && isVertValid;
 
-    } else if (emailLoginForm.style.display !== 'none') {
-        isValid = isEmailValid && isVertValid;
-
+        }
     }
+    )
+    passwordFirstInput.addEventListener('input', function () {
+        if (passwordVertInput.value == passwordFirstInput.value && passwordFirstInput.value) {
 
 
-    if (isValid) {
+            errorbox.style.visibility = 'hidden';
+
+        } else {
+            errorbox.style.visibility = 'visible';
+
+
+        }
+    })
+
+    // 判断登陆按钮是否可以点击
+    if ((passwordVertInput.value == passwordFirstInput.value) && usernameInput.value) {
         loginButton2.disabled = false;
         loginButton2.style.cursor = 'pointer';
     } else {

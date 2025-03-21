@@ -119,11 +119,7 @@ const everyCareerbox = document.querySelector('.everyCareerinfobox')
 recruimentNav.addEventListener('click', function (e) {
     e.preventDefault();
     if (e.target.tagName === "A") {
-        //这部分由其他页面跳转回去的先搁置
-        // MainContent.style.display = 'flex'
 
-        // SearchCareerIndex.style.display = 'none'
-        // navBc.style.backgroundColor = 'transparent'
         //实现页面跳转
         const tabid = +e.target.dataset.id
         if (tabid == 0) {
