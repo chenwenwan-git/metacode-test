@@ -155,6 +155,7 @@
             </div>
         </div>
     </div>
+    <!-- 职位筛选类别后的列表页面 -->
     <div class="search-career-index">
         <div class="on-recruit-career">
             <div class="top">
@@ -202,8 +203,9 @@
 
             <div class="search-result-box">
 
-
             </div>
+
+            <!-- 底部的页面切换 -->
             <div class="page-box">
                 <div class="change-box">
                     <select name="" id="">
@@ -240,6 +242,7 @@
 
 
     </div>
+    <!-- 底部 -->
     <div class="footer-box">
         <div class="footer-top">
             <img src="images/yue.915cae3.png" alt="">
@@ -253,12 +256,14 @@
             <a href="https://www.mokahr.com/"></a>
         </div>
     </div>
+    <!-- 触底返回的箭头 -->
     <div id="backTop" class="back-to-top">
         <i class="arrow-up"></i>
     </div>
 
     <script src='js/recruitment.js'></script>
     <script>
+        // 判断是否已经登陆了
         if (localStorage.getItem('token')) {
             signBtn.style.display = 'none'
             personinfo.style.display = 'block'
@@ -267,6 +272,7 @@
     </script>
 
     <script>
+        // 实现底部箭头返回顶部的功能
         // 获取返回顶部按钮和页面内容元素
 
         const content = document.querySelector('.contentall');
@@ -287,7 +293,6 @@
         })
         backTop.addEventListener('click', function () {
             // 回滚顶部
-            // 能不能缓慢滚动回去
 
             document.documentElement.scrollTop = 0
         })
@@ -295,7 +300,7 @@
 
     </script>
     <script>
-
+        // 顶部的导航栏根据页面滚动判断是否显示搜索框
         const hotCareer = document.querySelector('.hot-career')
         const header = document.querySelector('.suspension-box1')
         const MainContent = document.querySelector('.main-content-box')
@@ -314,6 +319,7 @@
         })
     </script>
     <script>
+        // 登陆按钮点击之后弹出登陆框
         // 获取登录按钮、遮罩层和关闭按钮的元素
         const loginButton = document.querySelector('.sign .sign-box .sign-btn');
         // const overlay = document.getElementById('overlay');
@@ -336,15 +342,13 @@
             // 隐藏遮罩层
             overlay.style.display = 'none';
             popup.style.display = 'none';
-            // overlay.style.display
-            // popup.style.display
         });
     </script>
     <script src="js/sign.js"></script>
     <script src="https://fastly.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="js/renderData.js"></script>
     <script>
-        //详细职位页面的left部分跳转
+        //详细职位页面的left(导航栏)部分跳转
 
         //获取元素
         const careerListtab = document.querySelector('.everyCareerinfobox .left')

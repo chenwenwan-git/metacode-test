@@ -183,7 +183,7 @@ searchResultBox.addEventListener('click', function (e) {
 middleBox.addEventListener('click', function (e) {
     if (e.target.classList.contains('apply')) {
         if (localStorage.getItem('token')) {
-            alert("可以申请职位")
+            alert("申请成功")
 
         } else {
             alert('请先登陆')
@@ -235,43 +235,3 @@ loginButton2.addEventListener('click', function () {
     }
 })
 
-
-// //登陆按钮的点击事件
-// loginButton2.addEventListener('click', function () {
-//     const phoneNumberValue = document.querySelector('.phone-login-form input').value
-//     const vertNumberValue = document.querySelector('.vert input').value
-
-//     //本地存储登陆状态，下次加载可以登陆？
-//     if (document.querySelector('.agreement input').checked) {
-//         console.log('可以提交请求了')
-//         axios({
-//             url: '/users/register',
-//             method: 'post',
-//             data: {
-//                 "userId": 0,
-//                 "userName": "chen",
-//                 "passWord": vertNumberValue,
-//                 "phoneNumber": phoneNumberValue,
-//                 "email": "none"
-
-
-//             }
-//         }).then(result => {
-//             console.log(result)
-
-//             // 如果成功了的话，就让person显示
-//             loginINg = 1
-//             signBtn.style.display = 'none'
-//             personinfo.style.display = 'block'
-//             localStorage.setItem('token', result.data.data.token)
-//         }).catch(error => {
-//             console.dir(error)
-//         })
-
-
-//     }
-//     else {
-//         // 后面修改这里的样式
-//         alert('请先勾选隐私协议')
-//     }
-// })
