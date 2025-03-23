@@ -16,8 +16,19 @@
 .right .avatar {
     height: 30px;
     width: 30px;
-    background-color: yellow;
+    background-color: #dadce5;
     border-radius: 15px;
+
+    color: white;
+    position: relative;
+}
+
+.right .avatar span {
+    position: absolute;
+    font-size: 18px;
+    bottom: 2px;
+    right: 50%;
+    margin-right: -9px;
 }
 
 

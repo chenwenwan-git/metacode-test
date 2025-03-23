@@ -112,8 +112,18 @@
     height: 30px;
     width: 30px;
     border-radius: 15px;
-    background-color: yellow;
+    background-color: #dadce5;
+    color: white;
+    position: relative;
 
+}
+
+.person-info span {
+    position: absolute;
+    font-size: 18px;
+    bottom: 2px;
+    right: 50%;
+    margin-right: -9px;
 }
 
 .tab-sign .tab div {
